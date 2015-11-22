@@ -201,7 +201,7 @@ class AnalogClock: UIView {
         formatter.dateFormat = "ss"
         let second = formatter.stringFromDate(NSDate()).toInt()!
         let realhourarc = (Float(hour) + Float(min)/60 + Float(second)/3600)/12
-        println(realhourarc)
+        //println(realhourarc)
         let hourx = CGRectGetMidX(rect) + 30 * sin(degree2radian(360) * CGFloat(realhourarc))
         let houry = CGRectGetMidY(rect) - 30 * cos(degree2radian(360) * CGFloat(realhourarc))
         let realminarc = (Float(min) + Float(second)/60)/60

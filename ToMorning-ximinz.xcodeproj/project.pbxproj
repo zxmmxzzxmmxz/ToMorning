@@ -16,6 +16,9 @@
 		470B55A61BF80490008C1D80 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470B55A51BF80490008C1D80 /* HealthKit.framework */; };
 		470B55A91BF804C1008C1D80 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B55A81BF804C1008C1D80 /* HealthManager.swift */; };
 		474753701BEECA080047CA9D /* IMG_6646.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4747536F1BEECA070047CA9D /* IMG_6646.jpg */; };
+		4791AE051BFEAA090050F0FF /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791AE041BFEAA090050F0FF /* GraphView.swift */; };
+		4791AE071BFEAB2C0050F0FF /* SingleReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791AE061BFEAB2C0050F0FF /* SingleReportViewController.swift */; };
+		4791AE091BFEADBF0050F0FF /* ReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791AE081BFEADBF0050F0FF /* ReportsViewController.swift */; };
 		4792CF741BFA3C3D00D6E6E1 /* Reports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4792CF731BFA3C3D00D6E6E1 /* Reports.swift */; };
 		47B00F361BEEDEF600297B85 /* Dogs.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47B00F311BEEDEF600297B85 /* Dogs.mp3 */; };
 		47B00F371BEEDEF600297B85 /* Phantom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47B00F321BEEDEF600297B85 /* Phantom.mp3 */; };
@@ -30,7 +33,6 @@
 		47B49DF11BEDB9BE007919B9 /* ToMorning_ximinzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B49DF01BEDB9BE007919B9 /* ToMorning_ximinzTests.swift */; };
 		47B49DFB1BEDBA23007919B9 /* AnalogClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B49DFA1BEDBA23007919B9 /* AnalogClock.swift */; };
 		47B49DFD1BEDCF18007919B9 /* SetUpAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B49DFC1BEDCF18007919B9 /* SetUpAlarmViewController.swift */; };
-		47B50BEF1BF9717A004AC8F5 /* ReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B50BEE1BF9717A004AC8F5 /* ReportsViewController.swift */; };
 		B6E150481BEEAF590034E1FF /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E150471BEEAF590034E1FF /* Images-2.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,9 @@
 		470B55A71BF80490008C1D80 /* ToMorning-ximinz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "ToMorning-ximinz.entitlements"; sourceTree = "<group>"; };
 		470B55A81BF804C1008C1D80 /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		4747536F1BEECA070047CA9D /* IMG_6646.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_6646.jpg; sourceTree = "<group>"; };
+		4791AE041BFEAA090050F0FF /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		4791AE061BFEAB2C0050F0FF /* SingleReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleReportViewController.swift; sourceTree = "<group>"; };
+		4791AE081BFEADBF0050F0FF /* ReportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
 		4792CF731BFA3C3D00D6E6E1 /* Reports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reports.swift; sourceTree = "<group>"; };
 		47B00F311BEEDEF600297B85 /* Dogs.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dogs.mp3; sourceTree = "<group>"; };
 		47B00F321BEEDEF600297B85 /* Phantom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Phantom.mp3; sourceTree = "<group>"; };
@@ -73,7 +78,6 @@
 		47B49DF01BEDB9BE007919B9 /* ToMorning_ximinzTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToMorning_ximinzTests.swift; sourceTree = "<group>"; };
 		47B49DFA1BEDBA23007919B9 /* AnalogClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalogClock.swift; sourceTree = "<group>"; };
 		47B49DFC1BEDCF18007919B9 /* SetUpAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpAlarmViewController.swift; sourceTree = "<group>"; };
-		47B50BEE1BF9717A004AC8F5 /* ReportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
 		B6E150471BEEAF590034E1FF /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,8 +127,10 @@
 				47B49DDE1BEDB9BE007919B9 /* Main.storyboard */,
 				47B49DE11BEDB9BE007919B9 /* Images.xcassets */,
 				470B55A81BF804C1008C1D80 /* HealthManager.swift */,
-				47B50BEE1BF9717A004AC8F5 /* ReportsViewController.swift */,
 				4792CF731BFA3C3D00D6E6E1 /* Reports.swift */,
+				4791AE041BFEAA090050F0FF /* GraphView.swift */,
+				4791AE061BFEAB2C0050F0FF /* SingleReportViewController.swift */,
+				4791AE081BFEADBF0050F0FF /* ReportsViewController.swift */,
 				47B49DFC1BEDCF18007919B9 /* SetUpAlarmViewController.swift */,
 				47B49DFA1BEDBA23007919B9 /* AnalogClock.swift */,
 				B6E150471BEEAF590034E1FF /* Images-2.xcassets */,
@@ -295,9 +301,11 @@
 				47B49DFB1BEDBA23007919B9 /* AnalogClock.swift in Sources */,
 				47B49DDD1BEDB9BE007919B9 /* AlarmViewController.swift in Sources */,
 				47B49DFD1BEDCF18007919B9 /* SetUpAlarmViewController.swift in Sources */,
-				47B50BEF1BF9717A004AC8F5 /* ReportsViewController.swift in Sources */,
+				4791AE091BFEADBF0050F0FF /* ReportsViewController.swift in Sources */,
+				4791AE071BFEAB2C0050F0FF /* SingleReportViewController.swift in Sources */,
 				4792CF741BFA3C3D00D6E6E1 /* Reports.swift in Sources */,
 				47B49DDB1BEDB9BE007919B9 /* AppDelegate.swift in Sources */,
+				4791AE051BFEAA090050F0FF /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

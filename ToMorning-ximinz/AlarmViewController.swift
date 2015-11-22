@@ -9,7 +9,6 @@
 import UIKit
 import AVFoundation
 import HealthKit
-@IBDesignable
 class AlarmViewController: UIViewController {
     
     var alarmDate=NSDate(timeInterval: -90, sinceDate: NSDate())
@@ -18,9 +17,13 @@ class AlarmViewController: UIViewController {
     var musicPlayer = AVPlayer()
     var audioPlayer = AVAudioPlayer()
     let message="Put iWatch on and enjoy the sleep!"
-    let healthManager:HealthManager = HealthManager()
+    var healthManager:HealthManager = HealthManager()
     var enabled=false
-
+    var timerforalarm:NSTimer?
+    var timerforclock:NSTimer?
+    var timerforheartrate:NSTimer?
+    var preheartrate=Double()
+    var currheartrate=Double()
     
     @IBOutlet weak var analogClockView: AnalogClock!
     @IBOutlet weak var alarmLabel: UILabel!
@@ -62,14 +65,33 @@ class AlarmViewController: UIViewController {
         self.enabled=healthManager.enabled
         print(enabled)
         if(enabled){
-            healthManager.saveHeartRateIntoHealthStore(50)
-            healthManager.getHeartRate()
+            //healthManager.saveHeartRateIntoHealthStore()
+            if let temprate = healthManager.getHeartRate(){
+                self.currheartrate=temprate
+                self.preheartrate=temprate
+                print("GET PRE RATE: \(currheartrate)")
+                timerforheartrate = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "setpreviousheartrate", userInfo: nil, repeats: true)
+            }
         }
         formatter.dateFormat="ss"
         let tempsec = formatter.stringFromDate(alarmDate).toInt()!
         alarmDate=alarmDate.dateByAddingTimeInterval(Double(-tempsec))
+    
     }
     
+    var times = 1.0
+    func setpreviousheartrate(){
+        if(times>3.0){
+            timerforheartrate!.invalidate()
+            timerforheartrate=nil
+        }
+        currheartrate=healthManager.getHeartRate()!
+        print("current rate is \(currheartrate)\n prevrate is \(preheartrate)")
+        preheartrate=(preheartrate*times + currheartrate)
+        times++
+        preheartrate=preheartrate/times
+        print("AFTER:prevrate is \(preheartrate)")
+    }
     /////////////////////////////////////////////////////////////////////////////////////////////
     // viewDidLoad()
     // Input: Null
@@ -82,16 +104,34 @@ class AlarmViewController: UIViewController {
         super.viewDidLoad()
         healthManager.authorizeHealthKit()
         alarmLabel.text = "--:--"
-        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "triggerAlarm", userInfo: nil, repeats: true)
-        NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: "renewAnalogClock", userInfo: nil, repeats: true)
         var path = NSBundle.mainBundle().URLForResource(musicTitle, withExtension: "mp3")
         var error:NSError?
         audioPlayer = AVAudioPlayer(contentsOfURL: path!, error: &error)
         audioPlayer.prepareToPlay()
         messageLabel.text=""
-        
+        print("here3")
     }
-
+    
+    override func viewWillAppear(animated: Bool) {
+        print("here2")
+        analogClockView.setNeedsDisplay()
+        timerforalarm = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "triggerAlarm", userInfo: nil, repeats: true)
+        timerforclock = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: "renewAnalogClock", userInfo: nil, repeats: true)
+    }
+    override func viewWillDisappear(animated: Bool) {
+        print("here")
+        if(analogClockView.layer.sublayers.count  != 0){
+            for view in analogClockView.layer.sublayers{
+                view.removeFromSuperlayer()
+            }
+        }
+        timerforalarm!.invalidate()
+        timerforalarm=nil
+        timerforclock!.invalidate()
+        timerforclock=nil
+        timerforheartrate?.invalidate()
+        timerforheartrate=nil
+    }
     
     ////////////////////////////////////////////////////////////////////////////////////////////
     // triggerAlarm()
@@ -125,10 +165,8 @@ class AlarmViewController: UIViewController {
     // Discription: Refresh the entire analogClock UI
     ////////////////////////////////////////////////////////
     func renewAnalogClock(){
-        if(analogClockView.layer.sublayers.count  != 0){
-            for view in analogClockView.layer.sublayers{
-                view.removeFromSuperlayer()
-            }
+        for view in analogClockView.layer.sublayers{
+            view.removeFromSuperlayer()
         }
         self.analogClockView.setNeedsDisplay()
     }
@@ -143,6 +181,8 @@ class AlarmViewController: UIViewController {
     }
 
     func shouldWakeUp()->Bool{
+//        heartrate=healthManager.getHeartRate()
+//        if
         return true
     }
     

@@ -13,10 +13,14 @@ class ReportsViewController: UIViewController,UITableViewDataSource,UITableViewD
     @IBOutlet weak var tv: UITableView!
     var heartratearray = ["2015-09-08","2015-09-10"]
     var selected:Int?
+    let fileManager = FileManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         selected=heartratearray.count
+        let filelist = fileManager.gettitlelist()
+        print("filelist is \(filelist)")
+        heartratearray=filelist
         // Do any additional setup after loading the view.
     }
 

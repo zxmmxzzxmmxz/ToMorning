@@ -17,7 +17,7 @@ class AlarmViewController: UIViewController {
     var musicTitle = "Summer"
     var musicPlayer = AVPlayer()
     var audioPlayer = AVAudioPlayer()
-    let message="Put iWatch on and enjoy the sleep!"
+    let message="Please wear your iWatch, and enjoy your sleep!"
     var healthManager:HealthManager = HealthManager()
     var enabled=false
     var timerforalarm:NSTimer?

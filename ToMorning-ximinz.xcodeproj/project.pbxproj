@@ -21,6 +21,7 @@
 		4791AE051BFEAA090050F0FF /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791AE041BFEAA090050F0FF /* GraphView.swift */; };
 		4791AE071BFEAB2C0050F0FF /* SingleReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791AE061BFEAB2C0050F0FF /* SingleReportViewController.swift */; };
 		4791AE091BFEADBF0050F0FF /* ReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791AE081BFEADBF0050F0FF /* ReportsViewController.swift */; };
+		4791AE0B1C026B0E0050F0FF /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791AE0A1C026B0E0050F0FF /* FileManager.swift */; };
 		4792CF741BFA3C3D00D6E6E1 /* Reports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4792CF731BFA3C3D00D6E6E1 /* Reports.swift */; };
 		47B00F361BEEDEF600297B85 /* Dogs.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47B00F311BEEDEF600297B85 /* Dogs.mp3 */; };
 		47B00F371BEEDEF600297B85 /* Phantom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47B00F321BEEDEF600297B85 /* Phantom.mp3 */; };
@@ -64,6 +65,7 @@
 		4791AE041BFEAA090050F0FF /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		4791AE061BFEAB2C0050F0FF /* SingleReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleReportViewController.swift; sourceTree = "<group>"; };
 		4791AE081BFEADBF0050F0FF /* ReportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
+		4791AE0A1C026B0E0050F0FF /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		4792CF731BFA3C3D00D6E6E1 /* Reports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reports.swift; sourceTree = "<group>"; };
 		47B00F311BEEDEF600297B85 /* Dogs.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dogs.mp3; sourceTree = "<group>"; };
 		47B00F321BEEDEF600297B85 /* Phantom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Phantom.mp3; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				47B49DDE1BEDB9BE007919B9 /* Main.storyboard */,
 				47B49DE11BEDB9BE007919B9 /* Images.xcassets */,
 				470B55A81BF804C1008C1D80 /* HealthManager.swift */,
+				4791AE0A1C026B0E0050F0FF /* FileManager.swift */,
 				4792CF731BFA3C3D00D6E6E1 /* Reports.swift */,
 				4791AE041BFEAA090050F0FF /* GraphView.swift */,
 				4791AE061BFEAB2C0050F0FF /* SingleReportViewController.swift */,
@@ -310,6 +313,7 @@
 				47B49DDD1BEDB9BE007919B9 /* AlarmViewController.swift in Sources */,
 				47B49DFD1BEDCF18007919B9 /* SetUpAlarmViewController.swift in Sources */,
 				4791AE091BFEADBF0050F0FF /* ReportsViewController.swift in Sources */,
+				4791AE0B1C026B0E0050F0FF /* FileManager.swift in Sources */,
 				4791AE071BFEAB2C0050F0FF /* SingleReportViewController.swift in Sources */,
 				4792CF741BFA3C3D00D6E6E1 /* Reports.swift in Sources */,
 				47B49DDB1BEDB9BE007919B9 /* AppDelegate.swift in Sources */,

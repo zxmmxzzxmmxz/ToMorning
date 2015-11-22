@@ -11,6 +11,7 @@ import AVFoundation
 import HealthKit
 class AlarmViewController: UIViewController {
     
+    var sleepDate=NSDate()
     var alarmDate=NSDate(timeInterval: -90, sinceDate: NSDate())
     let formatter=NSDateFormatter()
     var musicTitle = "Summer"
@@ -21,9 +22,8 @@ class AlarmViewController: UIViewController {
     var enabled=false
     var timerforalarm:NSTimer?
     var timerforclock:NSTimer?
-    var timerforheartrate:NSTimer?
-    var preheartrate=Double()
-    var currheartrate=Double()
+    var sleepdata:[Int]=[]
+    let fileManager = FileManager()
     
     @IBOutlet weak var analogClockView: AnalogClock!
     @IBOutlet weak var alarmLabel: UILabel!
@@ -62,36 +62,19 @@ class AlarmViewController: UIViewController {
             audioPlayer.prepareToPlay()
         }
         messageLabel.text=message
-        self.enabled=healthManager.enabled
-        print(enabled)
-        if(enabled){
-            //healthManager.saveHeartRateIntoHealthStore()
-            if let temprate = healthManager.getHeartRate(){
-                self.currheartrate=temprate
-                self.preheartrate=temprate
-                print("GET PRE RATE: \(currheartrate)")
-                timerforheartrate = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "setpreviousheartrate", userInfo: nil, repeats: true)
+        if(healthManager.ifhealthkitavailable()){
+            healthManager.saveHeartRateIntoHealthStore(70)
+            if let temprate = healthManager.getLatestHeartRateInHalfHour(){
+                healthManager.setInitHeartRate()
             }
         }
         formatter.dateFormat="ss"
         let tempsec = formatter.stringFromDate(alarmDate).toInt()!
         alarmDate=alarmDate.dateByAddingTimeInterval(Double(-tempsec))
+        sleepDate=NSDate()
     
     }
     
-    var times = 1.0
-    func setpreviousheartrate(){
-        if(times>3.0){
-            timerforheartrate!.invalidate()
-            timerforheartrate=nil
-        }
-        currheartrate=healthManager.getHeartRate()!
-        print("current rate is \(currheartrate)\n prevrate is \(preheartrate)")
-        preheartrate=(preheartrate*times + currheartrate)
-        times++
-        preheartrate=preheartrate/times
-        print("AFTER:prevrate is \(preheartrate)")
-    }
     /////////////////////////////////////////////////////////////////////////////////////////////
     // viewDidLoad()
     // Input: Null
@@ -109,11 +92,11 @@ class AlarmViewController: UIViewController {
         audioPlayer = AVAudioPlayer(contentsOfURL: path!, error: &error)
         audioPlayer.prepareToPlay()
         messageLabel.text=""
-        print("here3")
+        //print("here3")
     }
     
     override func viewWillAppear(animated: Bool) {
-        print("here2")
+        //print("here2")
         analogClockView.setNeedsDisplay()
         timerforalarm = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "triggerAlarm", userInfo: nil, repeats: true)
         timerforclock = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: "renewAnalogClock", userInfo: nil, repeats: true)
@@ -129,8 +112,7 @@ class AlarmViewController: UIViewController {
         timerforalarm=nil
         timerforclock!.invalidate()
         timerforclock=nil
-        timerforheartrate?.invalidate()
-        timerforheartrate=nil
+
     }
     
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -141,7 +123,7 @@ class AlarmViewController: UIViewController {
     //              time. If they matched, it will trigger the preloaded alarm music.
     ///////////////////////////////////////////////////////////////////////////////////////////
     func triggerAlarm(){
-        if(enabled){
+        if(healthManager.ifhealthkitavailable()){
             let earliestdate=alarmDate.dateByAddingTimeInterval(-1800)
             if(NSDate().earlierDate(earliestdate) == earliestdate && NSDate().laterDate(alarmDate) == alarmDate){
                 print("here")
@@ -181,12 +163,33 @@ class AlarmViewController: UIViewController {
     }
 
     func shouldWakeUp()->Bool{
-//        heartrate=healthManager.getHeartRate()
-//        if
-        return true
+        if(NSDate() == self.alarmDate){
+           return true
+        }
+        else{
+            if let currheartrate = healthManager.getLatestHeartRateInHalfHour(){
+                let diff = currheartrate - healthManager.getinitheartrate()
+                print("calculating diff,diff is \(diff)")
+                if((diff>(-7.0)) && (diff<7.0)){
+                    return true
+                }
+                else{
+                    return false
+                }
+            }
+            return false
+        }
     }
     
     func triggerAlert(){
+        if(healthManager.ifhealthkitavailable()){
+            if let currheartrate = healthManager.getLatestHeartRateInHalfHour(){
+                let dataset = healthManager.getsleepdatafromdate(sleepDate,enddate: NSDate())
+                fileManager.storedatasetusingcurrentdate(dataset)
+                print("YEAAAAAA!")
+            }
+        }
+        
         let alertController = UIAlertController(title: "Light Sleep Detected", message: "Time To Wake Up", preferredStyle: .Alert)
         
         let OKAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in

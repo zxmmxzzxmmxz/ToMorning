@@ -16,12 +16,16 @@ class SingleReportViewController: UIViewController,GraphViewDelegate{
     
     
     @IBOutlet weak var graphview: GraphView!
+    
     var filename:String?
     let fileManager = FileManager()
     var heartratearray=[16,59,1,70,70]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var lightsleep = -10
+        var deepsleep = 0
+        var initheartrate = 0
         graphview.dataSource=self
         if let existfilename = filename{
             print("filename is \(existfilename)\n")
@@ -30,9 +34,16 @@ class SingleReportViewController: UIViewController,GraphViewDelegate{
                 heartratearray=[]
                 print("temparr is \(temparr)\n")
                 var i = 0
+                initheartrate=Int(temparr[4])
                 for data in temparr{
                     if(i>3){
                         heartratearray.append(Int(data))
+                        if(Int(data) >= initheartrate){
+                            lightsleep += 10
+                        }
+                        else{
+                            deepsleep += 10
+                        }
                     }
                     i++
                 }
@@ -40,13 +51,14 @@ class SingleReportViewController: UIViewController,GraphViewDelegate{
                 let gotobedmin = temparr[1]
                 let wakeuphour = temparr[2]
                 let wakeupmin = temparr[3]
-                gotobedtimelabel.text=String(stringInterpolationSegment: gotobedhour) + String(stringInterpolationSegment: gotobedmin)
+                gotobedtimelabel.text=String(stringInterpolationSegment: Int(gotobedhour)) + ":" + String(stringInterpolationSegment: Int(gotobedmin))
                 var totaltime = Int(wakeuphour) - Int(gotobedhour)
                 if(totaltime<0){
                     totaltime=totaltime+24
                 }
-                sleepingtimeintotallabel.text = String(stringInterpolationSegment: totaltime) + "hours"
-                
+                sleepingtimeintotallabel.text = String(stringInterpolationSegment: totaltime) + " hours"
+                lightsleepintotallabel.text = String(stringInterpolationSegment: lightsleep)+" minutes"
+                deepsleepintotallabel.text = String(stringInterpolationSegment: deepsleep)+" minutes"
             }
         }
         // Do any additional setup after loading the view.

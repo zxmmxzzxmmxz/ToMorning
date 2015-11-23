@@ -261,10 +261,10 @@
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="19"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total REM Sleep:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIj-aa-hTd">
-                                <rect key="frame" x="39" y="518" width="148" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                        " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIj-aa-hTd">
+                                <rect key="frame" x="39" y="518" width="104" height="30"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="19"/>
-                                <nil key="highlightedColor"/>
+                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="deviceWhite"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aj-GV-Yho">
                                 <rect key="frame" x="266" y="542" width="69" height="58"/>
@@ -308,8 +308,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73U-bG-E0H">
-                                <rect key="frame" x="565" y="522" width="10" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73U-bG-E0H">
+                                <rect key="frame" x="570" y="522" width="5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -423,12 +423,11 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="deepsleepintotallabel" destination="Kd6-i8-m4I" id="l2U-iX-aHe"/>
-                        <outlet property="gobobedtimelabel" destination="iUw-ez-xtC" id="AMN-nf-P1D"/>
+                        <outlet property="deepsleepintotallabel" destination="Kd6-i8-m4I" id="9yO-Ui-jtO"/>
+                        <outlet property="gotobedtimelabel" destination="iUw-ez-xtC" id="5UN-YI-4CQ"/>
                         <outlet property="graphview" destination="aq0-JM-4nx" id="fgs-D8-zk1"/>
-                        <outlet property="lightsleepintotallabe" destination="jZB-5f-uM1" id="of9-sy-7pl"/>
-                        <outlet property="lightsleepintotallabel" destination="jZB-5f-uM1" id="OaY-ak-CP5"/>
-                        <outlet property="sleepingtimeintotallabel" destination="tbW-bj-iYq" id="jZW-w7-b00"/>
+                        <outlet property="lightsleepintotallabel" destination="jZB-5f-uM1" id="qza-hO-mwd"/>
+                        <outlet property="sleepingtimeintotallabel" destination="tbW-bj-iYq" id="ENm-eF-FoP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2AY-1J-beI" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -266,21 +266,21 @@
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="19"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUC-mW-HYE">
-                                <rect key="frame" x="323" y="557" width="30" height="30"/>
-                                <state key="normal" title="3">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aj-GV-Yho">
+                                <rect key="frame" x="266" y="534" width="69" height="58"/>
+                                <state key="normal" image="ema.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxn-jH-OdX">
-                                <rect key="frame" x="247" y="557" width="30" height="30"/>
-                                <state key="normal" title="1">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUC-mW-HYE">
+                                <rect key="frame" x="343" y="534" width="58" height="58"/>
+                                <state key="normal" image="inst.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aj-GV-Yho">
-                                <rect key="frame" x="285" y="557" width="30" height="30"/>
-                                <state key="normal" title="2">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxn-jH-OdX">
+                                <rect key="frame" x="200" y="534" width="58" height="58"/>
+                                <state key="normal" image="fb.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -556,6 +556,9 @@
         <image name="4.png" width="58" height="58"/>
         <image name="IMG_6646.jpg" width="1499" height="1125"/>
         <image name="cancel.png" width="58" height="58"/>
+        <image name="ema.png" width="58" height="58"/>
+        <image name="fb.png" width="58" height="58"/>
+        <image name="inst.png" width="58" height="58"/>
         <image name="start.png" width="120" height="120"/>
     </resources>
 </document>

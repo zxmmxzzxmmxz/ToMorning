@@ -11,16 +11,18 @@ import UIKit
 class ReportsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
     @IBOutlet weak var tv: UITableView!
-    var heartratearray = ["2015-09-08","2015-09-10"]
-    var selected:Int?
+    var heartratearray = ["sample"]
+    var selected:Int=0
     let fileManager = FileManager()
-
+    var healthManager:HealthManager?
     override func viewDidLoad() {
         super.viewDidLoad()
         selected=heartratearray.count
-        let filelist = fileManager.gettitlelist()
-        print("filelist is \(filelist)")
-        heartratearray=filelist
+        if(healthManager!.ifhealthkitavailable()){
+            let filelist = fileManager.gettitlelist()
+            print("filelist is \(filelist)")
+            heartratearray=filelist
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -55,6 +57,9 @@ class ReportsViewController: UIViewController,UITableViewDataSource,UITableViewD
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let destination = segue.destinationViewController as?SingleReportViewController{
+            destination.filename=heartratearray[selected-1]
+        }
         
     }
     

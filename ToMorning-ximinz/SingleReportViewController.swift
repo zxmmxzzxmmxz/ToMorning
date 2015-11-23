@@ -11,13 +11,22 @@ import UIKit
 class SingleReportViewController: UIViewController,GraphViewDelegate{
     
     @IBOutlet weak var graphview: GraphView!
-    
-    var heartratearray=[30,30,30,30,40]
+    var filename:String?
+    let fileManager = FileManager()
+    var heartratearray=[70,70,70,70,70]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         graphview.dataSource=self
-        
+        if let existfilename = filename{
+            print("filename is \(existfilename)\n")
+            let temparr = fileManager.getdata(existfilename)
+            heartratearray=[]
+            print("temparr is \(temparr)\n")
+            for data in temparr{
+                heartratearray.append(Int(data))
+            }
+        }
         // Do any additional setup after loading the view.
     }
 

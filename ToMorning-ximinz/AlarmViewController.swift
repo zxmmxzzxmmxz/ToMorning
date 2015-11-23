@@ -92,6 +92,9 @@ class AlarmViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         healthManager.authorizeHealthKit()
+        if(healthManager.ifhealthkitavailable()){
+            healthManager.setInitHeartRate()
+        }
         alarmLabel.text = "--:--"
         var path = NSBundle.mainBundle().URLForResource(musicTitle, withExtension: "mp3")
         var error:NSError?

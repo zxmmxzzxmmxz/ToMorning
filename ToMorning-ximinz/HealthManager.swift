@@ -96,7 +96,7 @@ class HealthManager {
                 if let results = results as? [HKQuantitySample] {
                     //print(_stdlib_getDemangledTypeName(results))
                     //print(_stdlib_getDemangledTypeName(results[0]))
-                    print("initheartrate is \(results[results.count-1].quantity.doubleValueForUnit(self.heartRateUnit))\n")
+                    //print("initheartrate is \(results[results.count-1].quantity.doubleValueForUnit(self.heartRateUnit))\n")
                     self.initheartrate=results[0].quantity.doubleValueForUnit(self.heartRateUnit)
                 }
         }

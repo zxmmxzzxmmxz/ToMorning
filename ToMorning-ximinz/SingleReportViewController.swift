@@ -9,11 +9,16 @@
 import UIKit
 
 class SingleReportViewController: UIViewController,GraphViewDelegate{
+    @IBOutlet weak var gotobedtimelabel: UILabel!
+    @IBOutlet weak var sleepingtimeintotallabel: UILabel!
+    @IBOutlet weak var lightsleepintotallabel: UILabel!
+    @IBOutlet weak var deepsleepintotallabel: UILabel!
+    
     
     @IBOutlet weak var graphview: GraphView!
     var filename:String?
     let fileManager = FileManager()
-    var heartratearray=[70,70,70,70,70]
+    var heartratearray=[16,59,1,70,70]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +36,16 @@ class SingleReportViewController: UIViewController,GraphViewDelegate{
                     }
                     i++
                 }
+                let gotobedhour = temparr[0]
+                let gotobedmin = temparr[1]
+                let wakeuphour = temparr[2]
+                let wakeupmin = temparr[3]
+                gotobedtimelabel.text=String(stringInterpolationSegment: gotobedhour) + String(stringInterpolationSegment: gotobedmin)
+                var totaltime = Int(wakeuphour) - Int(gotobedhour)
+                if(totaltime<0){
+                    totaltime=totaltime+24
+                }
+                sleepingtimeintotallabel.text = String(stringInterpolationSegment: totaltime) + "hours"
                 
             }
         }

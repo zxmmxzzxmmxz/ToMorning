@@ -423,7 +423,12 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="deepsleepintotallabel" destination="Kd6-i8-m4I" id="l2U-iX-aHe"/>
+                        <outlet property="gobobedtimelabel" destination="iUw-ez-xtC" id="AMN-nf-P1D"/>
                         <outlet property="graphview" destination="aq0-JM-4nx" id="fgs-D8-zk1"/>
+                        <outlet property="lightsleepintotallabe" destination="jZB-5f-uM1" id="of9-sy-7pl"/>
+                        <outlet property="lightsleepintotallabel" destination="jZB-5f-uM1" id="OaY-ak-CP5"/>
+                        <outlet property="sleepingtimeintotallabel" destination="tbW-bj-iYq" id="jZW-w7-b00"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2AY-1J-beI" userLabel="First Responder" sceneMemberID="firstResponder"/>

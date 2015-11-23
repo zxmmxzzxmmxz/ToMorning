@@ -2,7 +2,7 @@
 //  FileManager.swift
 //  ToMorning-ximinz
 //
-//  Created by Carmen Zhuang on 2015-11-22.
+//  Created by Ximin Zhang on 2015-11-22.
 //  Copyright (c) 2015 CMPT275-04. All rights reserved.
 //
 
@@ -33,10 +33,14 @@ class FileManager{
         var fileManager = NSFileManager()
         var error:NSError?
         let mydir4 = NSHomeDirectory() + "/Documents/myfolder/files"
-        let filelist : NSArray = fileManager.contentsOfDirectoryAtPath(mydir4,error:nil)!
+        print("test1")
+        let filelist : NSArray? = fileManager.contentsOfDirectoryAtPath(mydir4,error:nil)
+        print("test2")
         var results:[String]=[]
-        for filename in filelist{
-            results.append(filename as! String)
+        if(!(filelist==nil)){
+            for filename in filelist!{
+                results.append(filename as! String)
+            }
         }
         return results
     }

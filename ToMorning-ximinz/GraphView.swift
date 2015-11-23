@@ -1,10 +1,8 @@
 //
 //  GraphView.swift
-//  Flo
 //
-//  Created by hong qiu on 2015-11-01.
-//  Copyright (c) 2015 Caroline Begbie. All rights reserved.
-///: Playground - noun: a place where people can play
+//  Created by Ximin Zhang on 2015-11-01.
+
 
 protocol GraphViewDelegate:class{
     func shouldGetIntArray(sender:GraphView)->[Int]

@@ -2,26 +2,28 @@
 //  ReportsViewController.swift
 //  ToMorning-ximinz
 //
-//  Created by Carmen Zhuang on 2015-11-19.
+//  Created by Ximin Zhang on 2015-11-19.
 //  Copyright (c) 2015 CMPT275-04. All rights reserved.
 //
 
 import UIKit
 
-class ReportsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
+@IBDesignable class ReportsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
     @IBOutlet weak var tv: UITableView!
     var heartratearray = ["sample"]
     var selected:Int=0
     let fileManager = FileManager()
-    var healthManager:HealthManager?
+    //var healthManager:HealthManager?
     override func viewDidLoad() {
         super.viewDidLoad()
         tv.backgroundView = UIImageView(image: UIImage(named: "IMG_6774.PNG"))
-        selected=heartratearray.count
+        //selected=heartratearray.count
         let filelist = fileManager.gettitlelist()
         print("filelist is \(filelist)")
-        heartratearray=filelist
+        if(filelist.count>0){
+            heartratearray=filelist
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -47,8 +49,8 @@ class ReportsViewController: UIViewController,UITableViewDataSource,UITableViewD
     }
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         selected=indexPath.row
-        tv.resignFirstResponder()
-        print("\n\n\nselected\n\n\n")
+        //tv.resignFirstResponder()
+        print("\n\n\nselected is \(selected)\n\n\n")
     }
     
     // MARK: - Navigation
@@ -58,7 +60,8 @@ class ReportsViewController: UIViewController,UITableViewDataSource,UITableViewD
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if let destination = segue.destinationViewController as?SingleReportViewController{
-            destination.filename=heartratearray[selected-1]
+            print("\n\n\nselected is \(selected)\n\n\n")
+            destination.filename=heartratearray[selected]
         }
         tv.resignFirstResponder()
         

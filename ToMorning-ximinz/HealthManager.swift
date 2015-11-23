@@ -2,7 +2,7 @@
 //  File.swift
 //  ToMorning-ximinz
 //
-//  Created by Carmen Zhuang on 2015-11-14.
+//  Created by Ximin Zhang on 2015-11-14.
 //  Copyright (c) 2015 CMPT275-04. All rights reserved.
 //
 

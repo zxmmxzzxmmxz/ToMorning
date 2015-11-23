@@ -2,7 +2,7 @@
 //  SingleReportViewController.swift
 //  ToMorning-ximinz
 //
-//  Created by Carmen Zhuang on 2015-11-19.
+//  Created by Ximin Zhang on 2015-11-19.
 //  Copyright (c) 2015 CMPT275-04. All rights reserved.
 //
 
@@ -39,6 +39,14 @@ class SingleReportViewController: UIViewController,GraphViewDelegate{
                 sleepingtimeintotallabel.text = String(stringInterpolationSegment: totaltime) + " hours"
                 lightsleepintotallabel.text = String(stringInterpolationSegment: report.getlightsleeptime())+" minutes"
                 deepsleepintotallabel.text = String(stringInterpolationSegment: report.getdeepsleeptime())+" minutes"
+                var datapointsindouble = report.getdatapoints()
+                var datapointsinint:[Int]=[]
+                for point in datapointsindouble{
+                    datapointsinint.append(Int(point))
+                }
+                if(datapointsinint.count>0){
+                    heartratearray=datapointsinint
+                }
             }
         }
         // Do any additional setup after loading the view.

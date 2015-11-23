@@ -108,11 +108,11 @@ class AlarmViewController: UIViewController {
         healthManager.setInitHeartRate()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let destination = segue.destinationViewController as? ReportsViewController{
-            destination.healthManager=self.healthManager
-        }
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if let destination = segue.destinationViewController as? ReportsViewController{
+//            destination.healthManager=self.healthManager
+//        }
+//    }
     /////////////////////////////////////////////////////////////////////////////////////////////
     // viewDidLoad()
     // Input: Null
@@ -224,6 +224,9 @@ class AlarmViewController: UIViewController {
     func triggerAlert(){
         alarmactive=false
         report!.setenddate(NSDate())
+        for(var i = 0 ; i<10;i++){
+            report!.enterdatapoint(Double(i*10))
+        }
         let dataset :NSArray = report!.getwholeinarray()
         print("dataset is \(dataset)")
         fileManager.storedatasetusingcurrentdate(dataset)

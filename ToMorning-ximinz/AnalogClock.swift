@@ -196,10 +196,13 @@ class AnalogClock: UIView {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "HH"
         let hour = formatter.stringFromDate(NSDate()).toInt()!
+        print("hour is \(hour)")
         formatter.dateFormat = "mm"
         let min = formatter.stringFromDate(NSDate()).toInt()!
+        print("min is \(min)")
         formatter.dateFormat = "ss"
         let second = formatter.stringFromDate(NSDate()).toInt()!
+        print("sec is \(second)")
         let realhourarc = (Float(hour) + Float(min)/60 + Float(second)/3600)/12
         //println(realhourarc)
         let hourx = CGRectGetMidX(rect) + 30 * sin(degree2radian(360) * CGFloat(realhourarc))

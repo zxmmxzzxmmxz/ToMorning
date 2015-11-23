@@ -87,6 +87,7 @@ class AlarmViewController: UIViewController {
     }
     
     func updatereport(){
+        if(alarmactive){
         if(healthManager.ifhealthkitavailable()){
             if let currrate = healthManager.getLatestHeartRateInHalfHour(){
                 if let initrate = healthManager.getinitheartrate(){
@@ -101,6 +102,7 @@ class AlarmViewController: UIViewController {
                     }
                 }
             }
+        }
         }
     }
     
@@ -140,11 +142,11 @@ class AlarmViewController: UIViewController {
         //print("here2")
         analogClockView.setNeedsDisplay()
         timerforalarm = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "triggerAlarm", userInfo: nil, repeats: true)
-        timerforclock = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: "renewAnalogClock", userInfo: nil, repeats: true)
+        //timerforclock = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: "renewAnalogClock", userInfo: nil, repeats: true)
         timerforreport = NSTimer.scheduledTimerWithTimeInterval(600, target: self, selector: "updatereport", userInfo: nil, repeats: true)
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewWillDisappear(animated: Bool) {
         //print("here")
         if(analogClockView.layer.sublayers.count  != 0){
             for view in analogClockView.layer.sublayers{
@@ -153,8 +155,8 @@ class AlarmViewController: UIViewController {
         }
         timerforalarm!.invalidate()
         timerforalarm=nil
-        timerforclock!.invalidate()
-        timerforclock=nil
+//        timerforclock!.invalidate()
+//        timerforclock=nil
         if(!(timerforreport==nil)) {
             timerforreport!.invalidate()
         }
@@ -192,12 +194,12 @@ class AlarmViewController: UIViewController {
     // Return: Null
     // Discription: Refresh the entire analogClock UI
     ////////////////////////////////////////////////////////
-    func renewAnalogClock(){
-        for view in analogClockView.layer.sublayers{
-            view.removeFromSuperlayer()
-        }
-        self.analogClockView.setNeedsDisplay()
-    }
+//    func renewAnalogClock(){
+//        for view in analogClockView.layer.sublayers{
+//            view.removeFromSuperlayer()
+//        }
+//        self.analogClockView.setNeedsDisplay()
+//    }
     
     @IBAction func cancel(sender: AnyObject) {
         alarmDate = NSDate(timeInterval: -90, sinceDate: NSDate())
@@ -227,10 +229,12 @@ class AlarmViewController: UIViewController {
         for(var i = 0 ; i<10;i++){
             report!.enterdatapoint(Double(i*10))
         }
+        
+        //testing use:input some hearrate data
         let dataset :NSArray = report!.getwholeinarray()
         print("dataset is \(dataset)")
         fileManager.storedatasetusingcurrentdate(dataset)
-        print("YEAAAAAA!")
+        //print("YEAAAAAA!")
         
         let alertController = UIAlertController(title: "Light Sleep Detected", message: "Time To Wake Up", preferredStyle: .Alert)
         

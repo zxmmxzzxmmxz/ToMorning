@@ -24,6 +24,9 @@ class HealthManager {
     
     let heartRateUnit: HKUnit = HKUnit.countUnit().unitDividedByUnit(HKUnit.minuteUnit())
 
+    init() {
+        setInitHeartRate()
+    }
     
     func ifhealthkitavailable()->Bool{
         return enabled

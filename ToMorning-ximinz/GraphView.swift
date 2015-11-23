@@ -17,7 +17,7 @@ import UIKit
     
     weak var dataSource: GraphViewDelegate?
     //Weekly sample data
-    var graphPoints:[Int]=[]
+    var graphPoints:[Int]=[1,3]
 
     //1 - the properties for the gradient
     @IBInspectable var startColor: UIColor = UIColor.redColor()
@@ -25,7 +25,7 @@ import UIKit
     
    
      override func drawRect(rect: CGRect){
-        graphPoints=dataSource?.shouldGetIntArray(self) ?? []
+        graphPoints=dataSource?.shouldGetIntArray(self) ?? [1,3]
         if graphPoints.count != 0 {
         
         let width = rect.width

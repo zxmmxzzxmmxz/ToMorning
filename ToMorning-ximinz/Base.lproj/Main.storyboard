@@ -164,14 +164,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your Report List: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7e-3H-GFB">
-                                <rect key="frame" x="217" y="72" width="166" height="29"/>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="29"/>
-                                <color key="textColor" red="0.41176470590000003" green="0.0" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="32" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dI5-r5-DxK">
-                                <rect key="frame" x="0.0" y="109" width="600" height="491"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="32" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dI5-r5-DxK">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyCell" rowHeight="32" id="Ilw-gI-xcd">
@@ -189,10 +183,16 @@
                                     <outlet property="delegate" destination="THM-w2-ESZ" id="DsV-lu-IDc"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your Report List: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7e-3H-GFB">
+                                <rect key="frame" x="217" y="72" width="166" height="29"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="29"/>
+                                <color key="textColor" red="0.41176470590000003" green="0.0" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dI5-r5-DxK" firstAttribute="top" secondItem="FLA-dB-Nf1" secondAttribute="bottom" constant="45" id="QDf-hu-0lg"/>
+                            <constraint firstItem="dI5-r5-DxK" firstAttribute="top" secondItem="FLA-dB-Nf1" secondAttribute="bottom" id="QDf-hu-0lg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dI5-r5-DxK" secondAttribute="trailing" constant="-16" id="U4A-VD-lKf"/>
                             <constraint firstItem="Umr-GM-4rI" firstAttribute="top" secondItem="dI5-r5-DxK" secondAttribute="bottom" id="aS9-gF-0P1"/>
                             <constraint firstAttribute="centerX" secondItem="y7e-3H-GFB" secondAttribute="centerX" id="oPf-E5-9QA"/>

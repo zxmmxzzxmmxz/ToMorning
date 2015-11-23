@@ -17,6 +17,7 @@ class ReportsViewController: UIViewController,UITableViewDataSource,UITableViewD
     var healthManager:HealthManager?
     override func viewDidLoad() {
         super.viewDidLoad()
+        tv.backgroundView = UIImageView(image: UIImage(named: "IMG_6774.PNG"))
         selected=heartratearray.count
         let filelist = fileManager.gettitlelist()
         print("filelist is \(filelist)")
@@ -24,9 +25,8 @@ class ReportsViewController: UIViewController,UITableViewDataSource,UITableViewD
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIImageView(image: UIImage(named: "IMG_6774.PNG"))
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -42,10 +42,12 @@ class ReportsViewController: UIViewController,UITableViewDataSource,UITableViewD
         let dequeued: AnyObject = tableView.dequeueReusableCellWithIdentifier("MyCell", forIndexPath: indexPath)
         let cell = dequeued as! UITableViewCell
         cell.textLabel?.text=data
+        cell.backgroundColor=UIColor.lightGrayColor()
         return cell
     }
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         selected=indexPath.row
+        tv.resignFirstResponder()
         print("\n\n\nselected\n\n\n")
     }
     
@@ -58,6 +60,7 @@ class ReportsViewController: UIViewController,UITableViewDataSource,UITableViewD
         if let destination = segue.destinationViewController as?SingleReportViewController{
             destination.filename=heartratearray[selected-1]
         }
+        tv.resignFirstResponder()
         
     }
     

@@ -9,7 +9,7 @@
 import Foundation
 
 class FileManager{
-    func storedatasetusingcurrentdate(dataset:[Double])->Bool{
+    func storedatasetusingcurrentdate(dataset:NSArray)->Bool{
         let homeDirectory = NSHomeDirectory()
         let documentPaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         let documentPath = documentPaths[0] as! String
@@ -41,7 +41,7 @@ class FileManager{
         return results
     }
     
-    func getdata(filename:String)->[Double]{
+    func getdata(filename:String) -> NSArray{
         let homeDirectory = NSHomeDirectory()
         let documentPaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         let documentPath = documentPaths[0] as! String
@@ -49,15 +49,10 @@ class FileManager{
         var error:NSError?
         let mydir4 = NSHomeDirectory() + "/Documents/myfolder/files"
         let filelist : NSArray = fileManager.contentsOfDirectoryAtPath(mydir4,error:nil)!
-        var results:[Double]=[]
         let onepath = mydir4 + "/\(filename)"
         let content = NSArray(contentsOfFile: onepath)!
         print("content is \(content)\n")
-        for data in content{
-            results.append(data as! Double)
-        }
-        print("results is \(results)\n")
-        return results
+        return content
     }
     
 }

@@ -12,7 +12,8 @@ import HealthKit
 class HealthManager {
     var enabled=false
     var rateresult:Double?
-    var initheartrate=0.0
+    //test use
+    var initheartrate:Double?
     let healthStore: HKHealthStore? = {
         if HKHealthStore.isHealthDataAvailable() {
             return HKHealthStore()
@@ -24,40 +25,36 @@ class HealthManager {
     
     let heartRateUnit: HKUnit = HKUnit.countUnit().unitDividedByUnit(HKUnit.minuteUnit())
 
-    init() {
-        setInitHeartRate()
-    }
-    
     func ifhealthkitavailable()->Bool{
         return enabled
     }
     
-    func getsleepdatafromdate(startdate:NSDate)->[Double]{
-        print("startdate is \(startdate)")
-        var dataset:[Double]=[]
-        let HeartRate = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)
-        let mostRecentPredicate = HKQuery.predicateForSamplesWithStartDate(startdate, endDate:NSDate(), options: .None)
-        let stepsSampleQuery = HKSampleQuery(sampleType: HeartRate,
-            predicate: mostRecentPredicate,
-            limit: 120,
-            sortDescriptors: nil)
-            { [unowned self] (query, results, error) in
-                if let results = results as? [HKQuantitySample] {
-                    //print(_stdlib_getDemangledTypeName(results))
-                    //print(_stdlib_getDemangledTypeName(results[0]))
-                    //print("heartrate is \(results[0].quantity.doubleValueForUnit(self.heartRateUnit))\n")
-                    print("heartrate detected\n")
-                    for result in results{
-                        print("this result is \(result.quantity.doubleValueForUnit(self.heartRateUnit))")
-                        dataset.append(result.quantity.doubleValueForUnit(self.heartRateUnit))
-                    }
-                }
-            }
-        // Don't forget to execute the Query!
-        healthStore?.executeQuery(stepsSampleQuery)
-        return dataset
-    }
-    func getinitheartrate()->Double{
+//    func getsleepdatafromdate(startdate:NSDate)->[Double]{
+//        print("startdate is \(startdate)")
+//        var dataset:[Double]=[]
+//        let HeartRate = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)
+//        let mostRecentPredicate = HKQuery.predicateForSamplesWithStartDate(startdate, endDate:NSDate(), options: .None)
+//        let stepsSampleQuery = HKSampleQuery(sampleType: HeartRate,
+//            predicate: mostRecentPredicate,
+//            limit: 120,
+//            sortDescriptors: nil)
+//            { [unowned self] (query, results, error) in
+//                if let results = results as? [HKQuantitySample] {
+//                    //print(_stdlib_getDemangledTypeName(results))
+//                    //print(_stdlib_getDemangledTypeName(results[0]))
+//                    //print("heartrate is \(results[0].quantity.doubleValueForUnit(self.heartRateUnit))\n")
+//                    print("heartrate detected\n")
+//                    for result in results{
+//                        print("this result is \(result.quantity.doubleValueForUnit(self.heartRateUnit))")
+//                        dataset.append(result.quantity.doubleValueForUnit(self.heartRateUnit))
+//                    }
+//                }
+//            }
+//        // Don't forget to execute the Query!
+//        healthStore?.executeQuery(stepsSampleQuery)
+//        return dataset
+//    }
+    func getinitheartrate()->Double?{
         return initheartrate
     }
     
@@ -97,7 +94,9 @@ class HealthManager {
                     //print(_stdlib_getDemangledTypeName(results))
                     //print(_stdlib_getDemangledTypeName(results[0]))
                     //print("initheartrate is \(results[results.count-1].quantity.doubleValueForUnit(self.heartRateUnit))\n")
-                    self.initheartrate=results[0].quantity.doubleValueForUnit(self.heartRateUnit)
+                    if(results.count>0){
+                        self.initheartrate=results[0].quantity.doubleValueForUnit(self.heartRateUnit)
+                    }
                 }
         }
         // Don't forget to execute the Query!
@@ -112,14 +111,14 @@ class HealthManager {
         let mostRecentPredicate = HKQuery.predicateForSamplesWithStartDate(past, endDate:now, options: .None)
         let stepsSampleQuery = HKSampleQuery(sampleType: HeartRate,
             predicate: mostRecentPredicate,
-            limit: 30,
+            limit: 1800,
             sortDescriptors: nil)
             { [unowned self] (query, results, error) in
                 if let results = results as? [HKQuantitySample] {
                     //print(_stdlib_getDemangledTypeName(results))
                     //print(_stdlib_getDemangledTypeName(results[0]))
                     if results.count>=1 {
-                        print("currheartrate is \(results[results.count-1].quantity.doubleValueForUnit(self.heartRateUnit))\n")
+                        //print("currheartrate is \(results[results.count-1].quantity.doubleValueForUnit(self.heartRateUnit))\n")
                         self.rateresult=results[results.count-1].quantity.doubleValueForUnit(self.heartRateUnit)
                     }
                 }
@@ -132,7 +131,7 @@ class HealthManager {
     
     func saveHeartRateIntoHealthStore(height:Double) -> Void
     {
-        // Save the user's heart rate into HealthKit.
+        // Save the user's heart rate into HealthKit. Testing use
         let heartRateQuantity: HKQuantity = HKQuantity(unit: heartRateUnit, doubleValue: height)
         
         var heartRate : HKQuantityType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)

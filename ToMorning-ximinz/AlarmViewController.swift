@@ -22,8 +22,11 @@ class AlarmViewController: UIViewController {
     var enabled=false
     var timerforalarm:NSTimer?
     var timerforclock:NSTimer?
+    var timerforreport:NSTimer?
+    var report:Reports?
     var sleepdata:[Int]=[]
     let fileManager = FileManager()
+    var alarmactive = false
     
     @IBOutlet weak var analogClockView: AnalogClock!
     @IBOutlet weak var alarmLabel: UILabel!
@@ -39,6 +42,7 @@ class AlarmViewController: UIViewController {
     @IBAction func setAlarm(segue:UIStoryboardSegue){
         let source = segue.sourceViewController as! SetUpAlarmViewController
         alarmDate = source.returnselectedDate()
+        
         let formatter = NSDateFormatter()
         formatter.dateFormat = "HH"
         if(formatter.stringFromDate(alarmDate).toInt()!<12){
@@ -54,6 +58,8 @@ class AlarmViewController: UIViewController {
             formatter.dateFormat="mm"
             alarmLabel.text=String(hour)+":"+formatter.stringFromDate(alarmDate)+"PM"
         }
+        //retreive and set alarmlabel
+        
         musicTitle=source.selectedMusicTitle()
         var path = NSBundle.mainBundle().URLForResource(musicTitle, withExtension: "mp3")
         var error:NSError?
@@ -61,19 +67,45 @@ class AlarmViewController: UIViewController {
         if(error==nil){
             audioPlayer.prepareToPlay()
         }
+        //initial music player
+        
         messageLabel.text=message
-        if(healthManager.ifhealthkitavailable()){
-            healthManager.saveHeartRateIntoHealthStore(70)
-            if let temprate = healthManager.getLatestHeartRateInHalfHour(){
-                print("hereaaaaaaa")
-                healthManager.setInitHeartRate()
-            }
-        }
+        //set message label
+        
         formatter.dateFormat="ss"
         let tempsec = formatter.stringFromDate(alarmDate).toInt()!
         alarmDate=alarmDate.dateByAddingTimeInterval(Double(-tempsec))
-        sleepDate=NSDate()
+        //set alarm date
+        
+        report = Reports(start: NSDate())
+        timerforreport = NSTimer.scheduledTimerWithTimeInterval(600, target: self, selector: "updatereport", userInfo: nil, repeats: true)
+        //initial sleeping reports
+        if(healthManager.ifhealthkitavailable()){
+            NSTimer.scheduledTimerWithTimeInterval(1800, target: self, selector: "initheartrate", userInfo: nil, repeats: false)
+        }
+        alarmactive=true
+    }
     
+    func updatereport(){
+        if(healthManager.ifhealthkitavailable()){
+            if let currrate = healthManager.getLatestHeartRateInHalfHour(){
+                if let initrate = healthManager.getinitheartrate(){
+                    if((-10.0) < (currrate - initrate) && (currrate - initrate) < (10.0)){
+                        //light sleep detected
+                        report!.enterdatapoint(currrate)
+                        report!.addlightsleeptime_ten_mins()
+                    }
+                    else{
+                        report!.enterdatapoint(currrate)
+                        report!.adddeepsleeptime_ten_mins()
+                    }
+                }
+            }
+        }
+    }
+    
+    func initheartrate(){
+        healthManager.setInitHeartRate()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -109,9 +141,11 @@ class AlarmViewController: UIViewController {
         analogClockView.setNeedsDisplay()
         timerforalarm = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "triggerAlarm", userInfo: nil, repeats: true)
         timerforclock = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: "renewAnalogClock", userInfo: nil, repeats: true)
+        timerforreport = NSTimer.scheduledTimerWithTimeInterval(600, target: self, selector: "updatereport", userInfo: nil, repeats: true)
     }
-    override func viewWillDisappear(animated: Bool) {
-        print("here")
+    
+    override func viewDidDisappear(animated: Bool) {
+        //print("here")
         if(analogClockView.layer.sublayers.count  != 0){
             for view in analogClockView.layer.sublayers{
                 view.removeFromSuperlayer()
@@ -121,7 +155,10 @@ class AlarmViewController: UIViewController {
         timerforalarm=nil
         timerforclock!.invalidate()
         timerforclock=nil
-
+        if(!(timerforreport==nil)) {
+            timerforreport!.invalidate()
+        }
+        timerforreport=nil
     }
     
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -132,23 +169,23 @@ class AlarmViewController: UIViewController {
     //              time. If they matched, it will trigger the preloaded alarm music.
     ///////////////////////////////////////////////////////////////////////////////////////////
     func triggerAlarm(){
-        if(healthManager.ifhealthkitavailable()){
-            let earliestdate=alarmDate.dateByAddingTimeInterval(-1800)
-            if(NSDate().earlierDate(earliestdate) == earliestdate && NSDate().laterDate(alarmDate) == alarmDate){
-                print("here")
-                if(shouldWakeUp()){
-                    triggerAlert()
-                }
-            }
-        }
-        else{
+        if(alarmactive){
             formatter.dateFormat="HH:mm"
             if(formatter.stringFromDate(NSDate())==formatter.stringFromDate(alarmDate)){
                 triggerAlert()
+                return
+            }
+            if(healthManager.ifhealthkitavailable()){
+                let earliestdate=alarmDate.dateByAddingTimeInterval(-1800)
+                if(NSDate().earlierDate(earliestdate) == earliestdate && NSDate().laterDate(alarmDate) == alarmDate){
+                    print("here")
+                    if(shouldWakeUp()){
+                        triggerAlert()
+                    }
+                }
             }
         }
     }
-    
     ////////////////////////////////////////////////////////
     // renewAnalogClock()
     // Input: Null
@@ -166,52 +203,31 @@ class AlarmViewController: UIViewController {
         alarmDate = NSDate(timeInterval: -90, sinceDate: NSDate())
         messageLabel.text=""
         alarmLabel.text="--:--"
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        report=nil
     }
 
+
     func shouldWakeUp()->Bool{
-        if(NSDate() == self.alarmDate){
-           return true
-        }
-        else{
-            if let currheartrate = healthManager.getLatestHeartRateInHalfHour(){
-                let diff = currheartrate - healthManager.getinitheartrate()
-                print("calculating diff,diff is \(diff)")
+        if let currheartrate = healthManager.getLatestHeartRateInHalfHour(){
+            if let initrate = healthManager.getinitheartrate(){
+                let diff = currheartrate - initrate
+                //print("calculating diff,diff is \(diff)")
                 if((diff>(-7.0)) && (diff<7.0)){
                     return true
                 }
-                else{
-                    return false
-                }
             }
-            return false
         }
+        return false
+        
     }
     
     func triggerAlert(){
-        formatter.dateFormat="HH"
-        let gotobedhour = formatter.stringFromDate(sleepDate).toInt()!
-        let wakeuphour = formatter.stringFromDate(NSDate()).toInt()!
-        formatter.dateFormat="mm"
-        let gotobedmin = formatter.stringFromDate(sleepDate).toInt()!
-        let wakeupmin = formatter.stringFromDate(NSDate()).toInt()!
-        if(healthManager.ifhealthkitavailable()){
-            if let currheartrate = healthManager.getLatestHeartRateInHalfHour(){
-                var dataset = healthManager.getsleepdatafromdate(sleepDate)
-                dataset = [Double(gotobedhour),Double(gotobedmin),Double(wakeuphour),Double(wakeupmin),70,80,90]
-                print("dataset is \(dataset)")
-                fileManager.storedatasetusingcurrentdate(dataset)
-                print("YEAAAAAA!")
-            }
-        }
-        else{
-            var dataset = [Double(gotobedhour),Double(gotobedmin),Double(wakeuphour),Double(wakeupmin),70,80,90]
-            print("dataset is \(dataset)")
-            fileManager.storedatasetusingcurrentdate(dataset)
-            print("YEAAAAAA!")
-        }
+        alarmactive=false
+        report!.setenddate(NSDate())
+        let dataset :NSArray = report!.getwholeinarray()
+        print("dataset is \(dataset)")
+        fileManager.storedatasetusingcurrentdate(dataset)
+        print("YEAAAAAA!")
         
         let alertController = UIAlertController(title: "Light Sleep Detected", message: "Time To Wake Up", preferredStyle: .Alert)
         
@@ -222,6 +238,8 @@ class AlarmViewController: UIViewController {
         }
         alertController.addAction(OKAction)
         
+        timerforreport!.invalidate()
+        timerforreport=nil
         self.presentViewController(alertController, animated: true, completion:nil)
         audioPlayer.play()
         alarmDate = NSDate(timeInterval: -90, sinceDate: NSDate())

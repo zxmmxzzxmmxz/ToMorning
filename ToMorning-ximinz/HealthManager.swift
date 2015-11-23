@@ -29,10 +29,11 @@ class HealthManager {
         return enabled
     }
     
-    func getsleepdatafromdate(startdate:NSDate, enddate:NSDate)->[Double]{
+    func getsleepdatafromdate(startdate:NSDate)->[Double]{
+        print("startdate is \(startdate)")
         var dataset:[Double]=[]
         let HeartRate = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)
-        let mostRecentPredicate = HKQuery.predicateForSamplesWithStartDate(startdate, endDate:enddate, options: .None)
+        let mostRecentPredicate = HKQuery.predicateForSamplesWithStartDate(startdate, endDate:NSDate(), options: .None)
         let stepsSampleQuery = HKSampleQuery(sampleType: HeartRate,
             predicate: mostRecentPredicate,
             limit: 120,
@@ -41,8 +42,10 @@ class HealthManager {
                 if let results = results as? [HKQuantitySample] {
                     //print(_stdlib_getDemangledTypeName(results))
                     //print(_stdlib_getDemangledTypeName(results[0]))
-                    //print("heartrate is \(results[results.count-1].quantity.doubleValueForUnit(self.heartRateUnit))\n")
+                    //print("heartrate is \(results[0].quantity.doubleValueForUnit(self.heartRateUnit))\n")
+                    print("heartrate detected\n")
                     for result in results{
+                        print("this result is \(result.quantity.doubleValueForUnit(self.heartRateUnit))")
                         dataset.append(result.quantity.doubleValueForUnit(self.heartRateUnit))
                     }
                 }
@@ -76,6 +79,7 @@ class HealthManager {
     }
     
     func setInitHeartRate(){
+        print("setting initial hearrate\n")
         let HeartRate = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)
         let past = NSDate(timeInterval: -1800, sinceDate: NSDate())
         let now = NSDate()
@@ -89,7 +93,7 @@ class HealthManager {
                 if let results = results as? [HKQuantitySample] {
                     //print(_stdlib_getDemangledTypeName(results))
                     //print(_stdlib_getDemangledTypeName(results[0]))
-                    print("heartrate is \(results[results.count-1].quantity.doubleValueForUnit(self.heartRateUnit))\n")
+                    print("initheartrate is \(results[results.count-1].quantity.doubleValueForUnit(self.heartRateUnit))\n")
                     self.initheartrate=results[0].quantity.doubleValueForUnit(self.heartRateUnit)
                 }
         }
@@ -112,7 +116,7 @@ class HealthManager {
                     //print(_stdlib_getDemangledTypeName(results))
                     //print(_stdlib_getDemangledTypeName(results[0]))
                     if results.count>=1 {
-                        print("heartrate is \(results[results.count-1].quantity.doubleValueForUnit(self.heartRateUnit))\n")
+                        print("currheartrate is \(results[results.count-1].quantity.doubleValueForUnit(self.heartRateUnit))\n")
                         self.rateresult=results[results.count-1].quantity.doubleValueForUnit(self.heartRateUnit)
                     }
                 }

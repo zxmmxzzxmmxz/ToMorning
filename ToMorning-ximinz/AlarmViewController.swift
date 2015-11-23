@@ -65,6 +65,7 @@ class AlarmViewController: UIViewController {
         if(healthManager.ifhealthkitavailable()){
             healthManager.saveHeartRateIntoHealthStore(70)
             if let temprate = healthManager.getLatestHeartRateInHalfHour(){
+                print("hereaaaaaaa")
                 healthManager.setInitHeartRate()
             }
         }
@@ -75,6 +76,11 @@ class AlarmViewController: UIViewController {
     
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destination = segue.destinationViewController as? ReportsViewController{
+            destination.healthManager=self.healthManager
+        }
+    }
     /////////////////////////////////////////////////////////////////////////////////////////////
     // viewDidLoad()
     // Input: Null
@@ -184,7 +190,9 @@ class AlarmViewController: UIViewController {
     func triggerAlert(){
         if(healthManager.ifhealthkitavailable()){
             if let currheartrate = healthManager.getLatestHeartRateInHalfHour(){
-                let dataset = healthManager.getsleepdatafromdate(sleepDate,enddate: NSDate())
+                var dataset = healthManager.getsleepdatafromdate(sleepDate)
+                dataset = [70,80,90]
+                print("dataset is \(dataset)")
                 fileManager.storedatasetusingcurrentdate(dataset)
                 print("YEAAAAAA!")
             }

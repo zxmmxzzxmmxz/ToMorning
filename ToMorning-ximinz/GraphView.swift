@@ -25,7 +25,7 @@ import UIKit
     
    
      override func drawRect(rect: CGRect){
-        graphPoints=dataSource?.shouldGetIntArray(self) ?? [1,2,3,4,5]
+        graphPoints=dataSource?.shouldGetIntArray(self) ?? []
         if graphPoints.count != 0 {
         
         let width = rect.width

@@ -50,15 +50,13 @@ class FileManager{
         let mydir4 = NSHomeDirectory() + "/Documents/myfolder/files"
         let filelist : NSArray = fileManager.contentsOfDirectoryAtPath(mydir4,error:nil)!
         var results:[Double]=[]
-        if(filelist.count>0){
-            for filename in filelist{
-                let onepath = mydir4 + "/\(filename)"
-                let content = NSArray(contentsOfFile: onepath)!
-                for data in content{
-                    results.append(data as! Double)
-                }
-            }
+        let onepath = mydir4 + "/\(filename)"
+        let content = NSArray(contentsOfFile: onepath)!
+        print("content is \(content)\n")
+        for data in content{
+            results.append(data as! Double)
         }
+        print("results is \(results)\n")
         return results
     }
     

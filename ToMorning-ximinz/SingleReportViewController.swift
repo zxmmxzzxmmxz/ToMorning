@@ -21,12 +21,17 @@ class SingleReportViewController: UIViewController,GraphViewDelegate{
         if let existfilename = filename{
             print("filename is \(existfilename)\n")
             if(existfilename != "sample"){
-            let temparr = fileManager.getdata(existfilename)
-            heartratearray=[]
-            print("temparr is \(temparr)\n")
-            for data in temparr{
-                heartratearray.append(Int(data))
-            }
+                let temparr = fileManager.getdata(existfilename)
+                heartratearray=[]
+                print("temparr is \(temparr)\n")
+                var i = 0
+                for data in temparr{
+                    if(i>3){
+                        heartratearray.append(Int(data))
+                    }
+                    i++
+                }
+                
             }
         }
         // Do any additional setup after loading the view.

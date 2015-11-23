@@ -188,14 +188,26 @@ class AlarmViewController: UIViewController {
     }
     
     func triggerAlert(){
+        formatter.dateFormat="HH"
+        let gotobedhour = formatter.stringFromDate(sleepDate).toInt()!
+        let wakeuphour = formatter.stringFromDate(NSDate()).toInt()!
+        formatter.dateFormat="mm"
+        let gotobedmin = formatter.stringFromDate(sleepDate).toInt()!
+        let wakeupmin = formatter.stringFromDate(NSDate()).toInt()!
         if(healthManager.ifhealthkitavailable()){
             if let currheartrate = healthManager.getLatestHeartRateInHalfHour(){
                 var dataset = healthManager.getsleepdatafromdate(sleepDate)
-                dataset = [70,80,90]
+                dataset = [Double(gotobedhour),Double(gotobedmin),Double(wakeuphour),Double(wakeupmin),70,80,90]
                 print("dataset is \(dataset)")
                 fileManager.storedatasetusingcurrentdate(dataset)
                 print("YEAAAAAA!")
             }
+        }
+        else{
+            var dataset = [Double(gotobedhour),Double(gotobedmin),Double(wakeuphour),Double(wakeupmin),70,80,90]
+            print("dataset is \(dataset)")
+            fileManager.storedatasetusingcurrentdate(dataset)
+            print("YEAAAAAA!")
         }
         
         let alertController = UIAlertController(title: "Light Sleep Detected", message: "Time To Wake Up", preferredStyle: .Alert)

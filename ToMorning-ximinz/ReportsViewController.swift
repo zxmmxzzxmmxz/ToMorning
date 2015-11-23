@@ -18,11 +18,9 @@ class ReportsViewController: UIViewController,UITableViewDataSource,UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         selected=heartratearray.count
-        if(healthManager!.ifhealthkitavailable()){
-            let filelist = fileManager.gettitlelist()
-            print("filelist is \(filelist)")
-            heartratearray=filelist
-        }
+        let filelist = fileManager.gettitlelist()
+        print("filelist is \(filelist)")
+        heartratearray=filelist
         // Do any additional setup after loading the view.
     }
 

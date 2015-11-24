@@ -24,6 +24,7 @@ class SetUpAlarmViewController: UIViewController,UIPickerViewDataSource,UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.interactivePopGestureRecognizer.enabled = false
         datePicker.datePickerMode = UIDatePickerMode.Time
         // Do any additional setup after loading the view.
     }

@@ -46,6 +46,7 @@ class SingleReportViewController: UIViewController,GraphViewDelegate{
                 }
                 if(datapointsinint.count>0){
                     heartratearray=datapointsinint
+                    print("hearbeatrate array is : \(heartratearray)")
                 }
             }
         }

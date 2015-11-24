@@ -31,6 +31,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="469591739.54232299">
                                     <!--2015-11-19 02:08:59 +0000-->
                                 </date>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="35" y="145" width="596" height="162"/>
+                                </variation>
                             </datePicker>
                             <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="300" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="30c-JJ-LIr">
                                 <rect key="frame" x="29" y="363" width="320" height="216"/>
@@ -44,6 +47,9 @@
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="211" y="97" width="246" height="30"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOw-Lq-DQZ">
                                 <rect key="frame" x="158" y="589" width="58" height="58"/>
@@ -260,24 +266,24 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="                        " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIj-aa-hTd">
-                                <rect key="frame" x="39" y="518" width="104" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="19"/>
                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="deviceWhite"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aj-GV-Yho">
-                                <rect key="frame" x="266" y="542" width="69" height="58"/>
+                                <rect key="frame" x="272" y="542" width="58" height="58"/>
                                 <state key="normal" image="mai.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUC-mW-HYE">
-                                <rect key="frame" x="343" y="542" width="58" height="58"/>
+                                <rect key="frame" x="338" y="542" width="58" height="58"/>
                                 <state key="normal" image="ins.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxn-jH-OdX">
-                                <rect key="frame" x="195" y="542" width="58" height="58"/>
+                                <rect key="frame" x="201" y="542" width="58" height="58"/>
                                 <state key="normal" image="fb.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -307,7 +313,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73U-bG-E0H">
-                                <rect key="frame" x="570" y="522" width="5" height="21"/>
+                                <rect key="frame" x="0.0" y="0.0" width="5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>

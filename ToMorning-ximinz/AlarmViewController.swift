@@ -84,6 +84,7 @@ class AlarmViewController: UIViewController {
             NSTimer.scheduledTimerWithTimeInterval(1800, target: self, selector: "initheartrate", userInfo: nil, repeats: false)
         }
         alarmactive=true
+        analogClockView.setNeedsDisplay()
     }
     
     func updatereport(){
@@ -136,6 +137,7 @@ class AlarmViewController: UIViewController {
         audioPlayer.prepareToPlay()
         messageLabel.text=""
         //print("here3")
+        self.navigationController?.interactivePopGestureRecognizer.enabled = false
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -226,14 +228,16 @@ class AlarmViewController: UIViewController {
     func triggerAlert(){
         alarmactive=false
         report!.setenddate(NSDate())
-        for(var i = 0 ; i<10;i++){
-            report!.enterdatapoint(Double(i*10))
-        }
+//        for(var i = 0 ; i<10;i++){
+//            report!.enterdatapoint(Double(i*10))
+//        }
         
         //testing use:input some hearrate data
+        //testing use
         let dataset :NSArray = report!.getwholeinarray()
         print("dataset is \(dataset)")
-        fileManager.storedatasetusingcurrentdate(dataset)
+        //fileManager.storedatasetusingcurrentdate(dataset)
+        //temporary disable
         //print("YEAAAAAA!")
         
         let alertController = UIAlertController(title: "Light Sleep Detected", message: "Time To Wake Up", preferredStyle: .Alert)

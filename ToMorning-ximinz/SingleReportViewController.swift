@@ -28,7 +28,7 @@ class SingleReportViewController: UIViewController,GraphViewDelegate{
             print("filename is \(existfilename)\n")
             if(existfilename != "sample"){
                 let temparr = fileManager.getdata(existfilename)
-                print("temparr is \(temparr)\n")
+                //print("temparr is \(temparr)\n")
                 let report = Reports(start: NSDate())
                 report.loadfromarray(temparr)
                 gotobedtimelabel.text=report.wakeuptimeinhourminformat()
@@ -46,7 +46,7 @@ class SingleReportViewController: UIViewController,GraphViewDelegate{
                 }
                 if(datapointsinint.count>0){
                     heartratearray=datapointsinint
-                    print("hearbeatrate array is : \(heartratearray)")
+                    //print("hearbeatrate array is : \(heartratearray)")
                 }
             }
         }

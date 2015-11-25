@@ -55,7 +55,7 @@ class FileManager{
         let filelist : NSArray = fileManager.contentsOfDirectoryAtPath(mydir4,error:nil)!
         let onepath = mydir4 + "/\(filename)"
         let content = NSArray(contentsOfFile: onepath)!
-        print("content is \(content)\n")
+        //print("content is \(content)\n")
         return content
     }
     

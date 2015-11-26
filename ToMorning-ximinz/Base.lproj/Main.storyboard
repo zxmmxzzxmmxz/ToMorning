@@ -249,6 +249,12 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jro-xH-V8w">
+                                <rect key="frame" x="180" y="338" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -257,12 +263,17 @@
                             <constraint firstItem="xZp-cZ-rZv" firstAttribute="top" secondItem="vFL-6E-91X" secondAttribute="bottom" constant="8" symbolic="YES" id="I68-n1-R7Y"/>
                             <constraint firstItem="vgF-BP-Qt4" firstAttribute="top" secondItem="DbG-cE-fKM" secondAttribute="bottom" id="I7F-Nf-HDD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DbG-cE-fKM" secondAttribute="trailing" constant="-16" id="LbC-GU-fxZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jro-xH-V8w" secondAttribute="trailing" id="N2i-WC-Fbd"/>
+                            <constraint firstItem="jro-xH-V8w" firstAttribute="top" secondItem="1Yy-H6-lpA" secondAttribute="bottom" constant="8" symbolic="YES" id="N9c-Lh-xiL"/>
                             <constraint firstAttribute="centerX" secondItem="1Yy-H6-lpA" secondAttribute="centerX" id="NOS-6z-UyK"/>
+                            <constraint firstItem="i1V-15-eHR" firstAttribute="top" secondItem="jro-xH-V8w" secondAttribute="bottom" constant="8" symbolic="YES" id="PUv-lJ-Gl4"/>
                             <constraint firstAttribute="centerX" secondItem="vFL-6E-91X" secondAttribute="centerX" id="Pfh-gK-Y2W"/>
                             <constraint firstItem="DbG-cE-fKM" firstAttribute="leading" secondItem="Jym-1u-Leo" secondAttribute="leadingMargin" constant="-16" id="QGO-Ye-OBg"/>
                             <constraint firstItem="Tib-VN-AAJ" firstAttribute="leading" secondItem="Jym-1u-Leo" secondAttribute="leadingMargin" id="a9a-qo-aFs"/>
+                            <constraint firstItem="jro-xH-V8w" firstAttribute="leading" secondItem="Jym-1u-Leo" secondAttribute="leadingMargin" id="bdG-e8-wjy"/>
                             <constraint firstItem="xZp-cZ-rZv" firstAttribute="leading" secondItem="Jym-1u-Leo" secondAttribute="leadingMargin" id="e2e-XY-ojH"/>
                             <constraint firstItem="Tib-VN-AAJ" firstAttribute="top" secondItem="xZp-cZ-rZv" secondAttribute="bottom" constant="8" symbolic="YES" id="q8c-7p-uNL"/>
+                            <constraint firstAttribute="centerX" secondItem="jro-xH-V8w" secondAttribute="centerX" id="u2p-2m-AJJ"/>
                             <constraint firstItem="1Yy-H6-lpA" firstAttribute="top" secondItem="Tib-VN-AAJ" secondAttribute="bottom" constant="13" id="ucl-so-ZYJ"/>
                             <constraint firstItem="vgF-BP-Qt4" firstAttribute="top" secondItem="i1V-15-eHR" secondAttribute="bottom" constant="8" symbolic="YES" id="usC-dk-nrS"/>
                             <constraint firstAttribute="centerX" secondItem="i1V-15-eHR" secondAttribute="centerX" id="yFk-JT-KkD"/>
@@ -438,7 +449,7 @@
                                         <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                                        <color key="value" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <color key="value" red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -516,7 +527,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73U-bG-E0H">
                                 <rect key="frame" x="0.0" y="0.0" width="5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j26-cW-8TA">
@@ -670,7 +681,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YY2-MN-RPF">
                                 <rect key="frame" x="300" y="592" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Alarm: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2w4-BH-Mgh">

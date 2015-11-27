@@ -23,6 +23,7 @@ import UIKit
         print("filelist is \(filelist)")
         if(filelist.count>0){
             heartratearray=filelist
+            selected=heartratearray.count-1
         }
         // Do any additional setup after loading the view.
     }
@@ -60,8 +61,8 @@ import UIKit
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if let destination = segue.destinationViewController as?SingleReportViewController{
-            print("\n\n\nselected is \(selected)\n\n\n")
-            destination.filename=heartratearray[selected]
+            print("\n\n\nselected is \(heartratearray.count-1-selected)\n\n\n")
+            destination.filename=heartratearray[heartratearray.count-1-selected]
         }
         tv.resignFirstResponder()
         

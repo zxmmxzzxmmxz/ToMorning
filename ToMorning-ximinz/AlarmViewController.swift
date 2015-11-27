@@ -236,7 +236,7 @@ class AlarmViewController: UIViewController {
         //testing use
         let dataset :NSArray = report!.getwholeinarray()
         print("dataset is \(dataset)")
-        //fileManager.storedatasetusingcurrentdate(dataset)
+        fileManager.storedatasetusingcurrentdate(dataset)
         //temporary disable
         //print("YEAAAAAA!")
         

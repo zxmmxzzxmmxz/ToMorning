@@ -24,6 +24,7 @@
 		470B55A61BF80490008C1D80 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470B55A51BF80490008C1D80 /* HealthKit.framework */; };
 		470B55A91BF804C1008C1D80 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B55A81BF804C1008C1D80 /* HealthManager.swift */; };
 		474753701BEECA080047CA9D /* IMG_6646.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4747536F1BEECA070047CA9D /* IMG_6646.jpg */; };
+		475BE21F1C059EA6007BD8A3 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475BE21E1C059EA6007BD8A3 /* CalendarViewController.swift */; };
 		4791AE051BFEAA090050F0FF /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791AE041BFEAA090050F0FF /* GraphView.swift */; };
 		4791AE071BFEAB2C0050F0FF /* SingleReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791AE061BFEAB2C0050F0FF /* SingleReportViewController.swift */; };
 		4791AE091BFEADBF0050F0FF /* ReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791AE081BFEADBF0050F0FF /* ReportsViewController.swift */; };
@@ -74,6 +75,7 @@
 		470B55A71BF80490008C1D80 /* ToMorning-ximinz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "ToMorning-ximinz.entitlements"; sourceTree = "<group>"; };
 		470B55A81BF804C1008C1D80 /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		4747536F1BEECA070047CA9D /* IMG_6646.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_6646.jpg; sourceTree = "<group>"; };
+		475BE21E1C059EA6007BD8A3 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		4791AE041BFEAA090050F0FF /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		4791AE061BFEAB2C0050F0FF /* SingleReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleReportViewController.swift; sourceTree = "<group>"; };
 		4791AE081BFEADBF0050F0FF /* ReportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				47B49DE11BEDB9BE007919B9 /* Images.xcassets */,
 				470B55A81BF804C1008C1D80 /* HealthManager.swift */,
 				4791AE0A1C026B0E0050F0FF /* FileManager.swift */,
+				475BE21E1C059EA6007BD8A3 /* CalendarViewController.swift */,
 				4792CF731BFA3C3D00D6E6E1 /* Reports.swift */,
 				4791AE041BFEAA090050F0FF /* GraphView.swift */,
 				4791AE061BFEAB2C0050F0FF /* SingleReportViewController.swift */,
@@ -335,6 +338,7 @@
 				470B55A91BF804C1008C1D80 /* HealthManager.swift in Sources */,
 				47B49DFB1BEDBA23007919B9 /* AnalogClock.swift in Sources */,
 				47B49DDD1BEDB9BE007919B9 /* AlarmViewController.swift in Sources */,
+				475BE21F1C059EA6007BD8A3 /* CalendarViewController.swift in Sources */,
 				47B49DFD1BEDCF18007919B9 /* SetUpAlarmViewController.swift in Sources */,
 				4791AE091BFEADBF0050F0FF /* ReportsViewController.swift in Sources */,
 				4791AE0B1C026B0E0050F0FF /* FileManager.swift in Sources */,
@@ -473,10 +477,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "ToMorning-ximinz/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -489,10 +494,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "ToMorning-ximinz/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

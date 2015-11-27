@@ -21,6 +21,8 @@
 		2F11B18F1C051FE3009A5B38 /* newevent.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F11B18E1C051FE3009A5B38 /* newevent.png */; };
 		2F11B1911C0526B6009A5B38 /* okok.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F11B1901C0526B6009A5B38 /* okok.png */; };
 		2F5265DD1BF96CD3005DF6FD /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F5265D71BF96CD3005DF6FD /* cancel.png */; };
+		2FE4F0361C07EBFF0004DDD6 /* IMG_6860.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 2FE4F0351C07EBFF0004DDD6 /* IMG_6860.PNG */; };
+		2FFABFF31C07E3DE00C26C78 /* IMG_6781.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 2FFABFF01C07E3DE00C26C78 /* IMG_6781.PNG */; };
 		470B55A61BF80490008C1D80 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470B55A51BF80490008C1D80 /* HealthKit.framework */; };
 		470B55A91BF804C1008C1D80 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B55A81BF804C1008C1D80 /* HealthManager.swift */; };
 		474753701BEECA080047CA9D /* IMG_6646.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4747536F1BEECA070047CA9D /* IMG_6646.jpg */; };
@@ -70,6 +72,8 @@
 		2F11B18E1C051FE3009A5B38 /* newevent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newevent.png; sourceTree = "<group>"; };
 		2F11B1901C0526B6009A5B38 /* okok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = okok.png; sourceTree = "<group>"; };
 		2F5265D71BF96CD3005DF6FD /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
+		2FE4F0351C07EBFF0004DDD6 /* IMG_6860.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_6860.PNG; sourceTree = "<group>"; };
+		2FFABFF01C07E3DE00C26C78 /* IMG_6781.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_6781.PNG; sourceTree = "<group>"; };
 		470B55A51BF80490008C1D80 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		470B55A71BF80490008C1D80 /* ToMorning-ximinz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "ToMorning-ximinz.entitlements"; sourceTree = "<group>"; };
 		470B55A81BF804C1008C1D80 /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 		47B49DD81BEDB9BE007919B9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2FE4F0351C07EBFF0004DDD6 /* IMG_6860.PNG */,
+				2FFABFF01C07E3DE00C26C78 /* IMG_6781.PNG */,
 				2F11B1901C0526B6009A5B38 /* okok.png */,
 				2F11B18E1C051FE3009A5B38 /* newevent.png */,
 				2F0C20031C02AB6200D7E9F4 /* mai.png */,
@@ -304,7 +310,9 @@
 				47B49DE51BEDB9BE007919B9 /* LaunchScreen.xib in Resources */,
 				2F0C1FF21C029FCA00D7E9F4 /* IMG_6774.PNG in Resources */,
 				2F0C1FF71C02A87000D7E9F4 /* calend.png in Resources */,
+				2FE4F0361C07EBFF0004DDD6 /* IMG_6860.PNG in Resources */,
 				2F11B18F1C051FE3009A5B38 /* newevent.png in Resources */,
+				2FFABFF31C07E3DE00C26C78 /* IMG_6781.PNG in Resources */,
 				47B00F391BEEDEF600297B85 /* Truth.mp3 in Resources */,
 				2F0C1FFC1C02A95500D7E9F4 /* start.png in Resources */,
 				47B49DE21BEDB9BE007919B9 /* Images.xcassets in Resources */,

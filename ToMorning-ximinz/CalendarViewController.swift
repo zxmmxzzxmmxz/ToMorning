@@ -9,12 +9,13 @@
 import UIKit
 import CoreLocation
 
-class CalendarViewController: UIViewController,CLLocationManagerDelegate {
+class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITableViewDataSource,UITableViewDelegate{
 
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var eventTableView: UITableView!
     
     
     let locationManager = CLLocationManager()
@@ -58,13 +59,15 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         eventManage.checkCalendarAuthorizationStatus()
         print("getting calendar")
+        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "getcalendar", userInfo: nil, repeats: false)
+        eventTableView.backgroundView=UIImageView(image: UIImage(named: "IMG_6774.PNG"))
+        // Do any additional setup after loading the view.
+    }
+    func getcalendar(){
         if(eventManage.iseventstoreavailable()){
             eventManage.getCalendar()
         }
-        
-        // Do any additional setup after loading the view.
     }
-
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: {(placemarks, error)->Void in
@@ -138,7 +141,27 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate {
         dataTask.resume()
     }
     
-
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIImageView(image: UIImage(named: "IMG_6774.PNG"))
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let dequeued: AnyObject = tableView.dequeueReusableCellWithIdentifier("eventCell", forIndexPath: indexPath)
+        let cell = dequeued as! UITableViewCell
+        cell.textLabel?.text="123"
+        cell.backgroundColor=UIColor.lightGrayColor()
+        return cell
+    }
+    
+    
     /*
     // MARK: - Navigation
 

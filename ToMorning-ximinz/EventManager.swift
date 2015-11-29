@@ -10,6 +10,7 @@ import Foundation
 import EventKit
 class EventManager{
     private var eventstoreavailable = false
+    private var calendar:EKCalendar?
     let eventStore = EKEventStore()
     func checkCalendarAuthorizationStatus() {
         eventStore.requestAccessToEntityType(EKEntityTypeReminder,
@@ -24,14 +25,19 @@ class EventManager{
                 }
         })
     }
+    
     func iseventstoreavailable()->Bool{
         print(eventstoreavailable)
         return eventstoreavailable
     }
     func getCalendar(){
         let calendars = eventStore.calendarsForEntityType(EKEntityTypeReminder)
-        for calendar in calendars as! [EKCalendar] {
-            println("Calendar = \(calendar.title)")
+        for i in calendars as! [EKCalendar] {
+            println("Calendar = \(i.title)")
+        }
+        if(calendars.count>0){
+            calendar = (calendars[0] as! EKCalendar)
         }
     }
+    
 }

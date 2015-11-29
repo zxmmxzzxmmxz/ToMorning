@@ -182,7 +182,7 @@ class AlarmViewController: UIViewController {
             if(healthManager.ifhealthkitavailable()){
                 let earliestdate=alarmDate.dateByAddingTimeInterval(-1800)
                 if(NSDate().earlierDate(earliestdate) == earliestdate && NSDate().laterDate(alarmDate) == alarmDate){
-                    print("here")
+                    //print("here")
                     if(shouldWakeUp()){
                         triggerAlert()
                     }
@@ -235,7 +235,7 @@ class AlarmViewController: UIViewController {
         //testing use:input some hearrate data
         //testing use
         let dataset :NSArray = report!.getwholeinarray()
-        print("dataset is \(dataset)")
+        //print("dataset is \(dataset)")
         fileManager.storedatasetusingcurrentdate(dataset)
         //temporary disable
         //print("YEAAAAAA!")
@@ -246,6 +246,9 @@ class AlarmViewController: UIViewController {
             self.alarmLabel.text="--:--"
             self.audioPlayer.stop()
             self.messageLabel.text=""
+            let secondViewController = self.storyboard!.instantiateViewControllerWithIdentifier("CalendarViewController") as! CalendarViewController
+            
+            self.navigationController!.pushViewController(secondViewController, animated: true)
         }
         alertController.addAction(OKAction)
         
@@ -254,6 +257,7 @@ class AlarmViewController: UIViewController {
         self.presentViewController(alertController, animated: true, completion:nil)
         audioPlayer.play()
         alarmDate = NSDate(timeInterval: -90, sinceDate: NSDate())
+        
     }
 }
 

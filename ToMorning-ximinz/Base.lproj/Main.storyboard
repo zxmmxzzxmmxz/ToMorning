@@ -122,7 +122,7 @@
         <!--Calendar-->
         <scene sceneID="9C7-M2-Ldf">
             <objects>
-                <viewController id="1hI-m8-L9A" userLabel="Calendar" customClass="CalendarViewController" customModule="ToMorning_ximinz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalendarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1hI-m8-L9A" userLabel="Calendar" customClass="CalendarViewController" customModule="ToMorning_ximinz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0CF-gx-5DC"/>
                         <viewControllerLayoutGuide type="bottom" id="0D4-IR-QMr"/>

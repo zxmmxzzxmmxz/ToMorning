@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreLocation
-import EventKit
 
 class CalendarViewController: UIViewController,CLLocationManagerDelegate {
 
@@ -19,6 +18,7 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate {
     
     
     let locationManager = CLLocationManager()
+    let eventManage = EventManager()
     
     var currcity:String?{
         didSet{
@@ -44,8 +44,6 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate {
         }
     }
     
-    let eventStore = EKEventStore()
-    
     
     
     @IBAction func newEvent(segue:UIStoryboardSegue){
@@ -58,13 +56,12 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate {
         locationManager.desiredAccuracy=kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-//        let newCalendar = EKCalendar(forEntityType: EKEntityTypeEvent, eventStore: eventStore)
-//        let sourcesInEventStore = eventStore.sources() as! [EKSource]
-//        newCalendar.source = sourcesInEventStore.filter{
-//            (source: EKSource) -> Bool in
-//            source.sourceType.value == EKSourceTypeLocal.value
-//            }.first
-//        
+        eventManage.checkCalendarAuthorizationStatus()
+        print("getting calendar")
+        if(eventManage.iseventstoreavailable()){
+            eventManage.getCalendar()
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -78,8 +75,8 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate {
                 println("")
                 return
             }
-            print(self.locationManager.location.coordinate.longitude)
-            print(self.locationManager.location.coordinate.latitude)
+            //print(self.locationManager.location.coordinate.longitude)
+            //print(self.locationManager.location.coordinate.latitude)
             self.loadweatherdata(self.locationManager.location.coordinate)
             if placemarks.count > 0
             {
@@ -120,21 +117,21 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate {
                 if let main = responseDict["main"] as? NSDictionary{
                     if let humidity = main["humidity"] as? Double{
                         self.currhumidity = humidity
-                        print("set humidity")
+                        //print("set humidity")
                     }
                     if let temp = main["temp"] as? Double{
                         self.currtemperature = temp - 273.15
-                        print("set temp")
+                        //print("set temp")
                     }
                 }
                 if let weather = responseDict["weather"] as? NSArray{
                     if let condition = weather[0]["main"] as? String{
                         self.currweather = condition
-                        print("set weather")
+                        //print("set weather")
                     }
                 }
                 //println("jsonObject :\(responseDict)")
-                print(responseDict)
+                //print(responseDict)
             }
         }
         

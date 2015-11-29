@@ -27,6 +27,7 @@
 		470B55A91BF804C1008C1D80 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B55A81BF804C1008C1D80 /* HealthManager.swift */; };
 		474753701BEECA080047CA9D /* IMG_6646.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4747536F1BEECA070047CA9D /* IMG_6646.jpg */; };
 		475BE21F1C059EA6007BD8A3 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475BE21E1C059EA6007BD8A3 /* CalendarViewController.swift */; };
+		478D96171C0AFDD5000A13B9 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478D96161C0AFDD5000A13B9 /* EventManager.swift */; };
 		4791AE051BFEAA090050F0FF /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791AE041BFEAA090050F0FF /* GraphView.swift */; };
 		4791AE071BFEAB2C0050F0FF /* SingleReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791AE061BFEAB2C0050F0FF /* SingleReportViewController.swift */; };
 		4791AE091BFEADBF0050F0FF /* ReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791AE081BFEADBF0050F0FF /* ReportsViewController.swift */; };
@@ -80,6 +81,7 @@
 		470B55A81BF804C1008C1D80 /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		4747536F1BEECA070047CA9D /* IMG_6646.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_6646.jpg; sourceTree = "<group>"; };
 		475BE21E1C059EA6007BD8A3 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		478D96161C0AFDD5000A13B9 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		4791AE041BFEAA090050F0FF /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		4791AE061BFEAB2C0050F0FF /* SingleReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleReportViewController.swift; sourceTree = "<group>"; };
 		4791AE081BFEADBF0050F0FF /* ReportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				470B55A81BF804C1008C1D80 /* HealthManager.swift */,
 				4792CF731BFA3C3D00D6E6E1 /* Reports.swift */,
+				478D96161C0AFDD5000A13B9 /* EventManager.swift */,
 				4791AE0A1C026B0E0050F0FF /* FileManager.swift */,
 			);
 			name = Model;
@@ -373,6 +376,7 @@
 				475BE21F1C059EA6007BD8A3 /* CalendarViewController.swift in Sources */,
 				47B49DFD1BEDCF18007919B9 /* SetUpAlarmViewController.swift in Sources */,
 				4791AE091BFEADBF0050F0FF /* ReportsViewController.swift in Sources */,
+				478D96171C0AFDD5000A13B9 /* EventManager.swift in Sources */,
 				4791AE0B1C026B0E0050F0FF /* FileManager.swift in Sources */,
 				4791AE071BFEAB2C0050F0FF /* SingleReportViewController.swift in Sources */,
 				4792CF741BFA3C3D00D6E6E1 /* Reports.swift in Sources */,

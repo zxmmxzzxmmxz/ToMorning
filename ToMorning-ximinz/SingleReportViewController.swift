@@ -25,7 +25,7 @@ class SingleReportViewController: UIViewController,GraphViewDelegate{
         super.viewDidLoad()
         graphview.dataSource=self
         if let existfilename = filename{
-            print("filename is \(existfilename)\n")
+            //print("filename is \(existfilename)\n")
             if(existfilename != "sample"){
                 let temparr = fileManager.getdata(existfilename)
                 //print("temparr is \(temparr)\n")

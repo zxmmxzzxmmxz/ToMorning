@@ -8,18 +8,49 @@
 
 import UIKit
 import CoreLocation
+import EventKit
 
 class CalendarViewController: UIViewController,CLLocationManagerDelegate {
 
     @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var rainFallProbabilityLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     
     
-    
     let locationManager = CLLocationManager()
     
+    var currcity:String?{
+        didSet{
+            cityLabel.text=currcity!
+        }
+    }
+    
+    var currhumidity:Double?{
+        didSet{
+            humidityLabel.text=String(format: "%3.0f",currhumidity!)
+        }
+    }
+    
+    var currweather:String?{
+        didSet{
+            weatherLabel.text=currweather!
+        }
+    }
+    
+    var currtemperature:Double?{
+        didSet{
+            temperatureLabel.text=String(format:"%.1f°C",currtemperature!)
+        }
+    }
+    
+    let eventStore = EKEventStore()
+    
+    
+    
+    @IBAction func newEvent(segue:UIStoryboardSegue){
+        print("aa")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,19 +58,16 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate {
         locationManager.desiredAccuracy=kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-
+//        let newCalendar = EKCalendar(forEntityType: EKEntityTypeEvent, eventStore: eventStore)
+//        let sourcesInEventStore = eventStore.sources() as! [EKSource]
+//        newCalendar.source = sourcesInEventStore.filter{
+//            (source: EKSource) -> Bool in
+//            source.sourceType.value == EKSourceTypeLocal.value
+//            }.first
+//        
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
-    
-    
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: {(placemarks, error)->Void in
@@ -56,7 +84,11 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate {
             if placemarks.count > 0
             {
                 let pm = placemarks[0] as! CLPlacemark
-                self.displayLocationInfo(pm)
+                self.locationManager.stopUpdatingLocation()
+                self.currcity = pm.locality
+                self.temperatureLabel.text="Loading"
+                self.humidityLabel.text="Loading"
+                self.weatherLabel.text="Loading"
             }
             else
             {
@@ -64,22 +96,13 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate {
             }
         })
     }
-    
-    func displayLocationInfo(placemark: CLPlacemark)
-    {
-        
-        self.locationManager.stopUpdatingLocation()
-        cityLabel.text = placemark.locality
-        println(placemark.postalCode)
-        println(placemark.administrativeArea)
-        println(placemark.country)
-        
-    }
+
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!)
     {
         println("Error: " + error.localizedDescription)
     }
+    
     
     func loadweatherdata(location:CLLocationCoordinate2D){
         
@@ -94,7 +117,22 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate {
             }
             else{
                 var responseDict: NSDictionary = NSJSONSerialization.JSONObjectWithData(data,options: NSJSONReadingOptions.MutableContainers, error:nil) as! NSDictionary
-                
+                if let main = responseDict["main"] as? NSDictionary{
+                    if let humidity = main["humidity"] as? Double{
+                        self.currhumidity = humidity
+                        print("set humidity")
+                    }
+                    if let temp = main["temp"] as? Double{
+                        self.currtemperature = temp - 273.15
+                        print("set temp")
+                    }
+                }
+                if let weather = responseDict["weather"] as? NSArray{
+                    if let condition = weather[0]["main"] as? String{
+                        self.currweather = condition
+                        print("set weather")
+                    }
+                }
                 //println("jsonObject :\(responseDict)")
                 print(responseDict)
             }

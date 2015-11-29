@@ -18,7 +18,7 @@ class FileManager{
         let mydir4 = NSHomeDirectory() + "/Documents/myfolder/files"
         fileManager.createDirectoryAtPath(mydir4, withIntermediateDirectories: true, attributes: nil, error: &error)
         let formatter = NSDateFormatter()
-        formatter.dateFormat="yyyy:MMM:dd"
+        formatter.dateFormat="yyyy.MMM.dd"
         let date = formatter.stringFromDate(NSDate())
         var filePath = mydir4 + "/\(date)"
         var array :NSArray = dataset

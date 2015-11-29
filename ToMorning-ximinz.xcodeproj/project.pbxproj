@@ -124,6 +124,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		478D96131C0AEF88000A13B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				470B55A81BF804C1008C1D80 /* HealthManager.swift */,
+				4792CF731BFA3C3D00D6E6E1 /* Reports.swift */,
+				4791AE0A1C026B0E0050F0FF /* FileManager.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		478D96141C0AEF9D000A13B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				47B49DFA1BEDBA23007919B9 /* AnalogClock.swift */,
+				4791AE041BFEAA090050F0FF /* GraphView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		478D96151C0AEFA2000A13B9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				47B49DDC1BEDB9BE007919B9 /* AlarmViewController.swift */,
+				475BE21E1C059EA6007BD8A3 /* CalendarViewController.swift */,
+				4791AE061BFEAB2C0050F0FF /* SingleReportViewController.swift */,
+				4791AE081BFEADBF0050F0FF /* ReportsViewController.swift */,
+				47B49DFC1BEDCF18007919B9 /* SetUpAlarmViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		47B49DCC1BEDB9BE007919B9 = {
 			isa = PBXGroup;
 			children = (
@@ -147,18 +178,11 @@
 			isa = PBXGroup;
 			children = (
 				470B55A71BF80490008C1D80 /* ToMorning-ximinz.entitlements */,
-				47B49DDC1BEDB9BE007919B9 /* AlarmViewController.swift */,
 				47B49DDE1BEDB9BE007919B9 /* Main.storyboard */,
 				47B49DE11BEDB9BE007919B9 /* Images.xcassets */,
-				470B55A81BF804C1008C1D80 /* HealthManager.swift */,
-				4791AE0A1C026B0E0050F0FF /* FileManager.swift */,
-				475BE21E1C059EA6007BD8A3 /* CalendarViewController.swift */,
-				4792CF731BFA3C3D00D6E6E1 /* Reports.swift */,
-				4791AE041BFEAA090050F0FF /* GraphView.swift */,
-				4791AE061BFEAB2C0050F0FF /* SingleReportViewController.swift */,
-				4791AE081BFEADBF0050F0FF /* ReportsViewController.swift */,
-				47B49DFC1BEDCF18007919B9 /* SetUpAlarmViewController.swift */,
-				47B49DFA1BEDBA23007919B9 /* AnalogClock.swift */,
+				478D96131C0AEF88000A13B9 /* Model */,
+				478D96141C0AEF9D000A13B9 /* View */,
+				478D96151C0AEFA2000A13B9 /* Controller */,
 				B6E150471BEEAF590034E1FF /* Images-2.xcassets */,
 				47B49DD81BEDB9BE007919B9 /* Supporting Files */,
 			);

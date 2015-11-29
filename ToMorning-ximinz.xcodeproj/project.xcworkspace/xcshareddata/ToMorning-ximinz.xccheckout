@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>04AC206E-6FA8-4204-B644-34A11A2387BA</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>ToMorning-ximinz</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>95EE9A21DBF34A6A82F7E320E00DADC6F610AC3F</key>
 		<string>https://github.com/zxmmxzzxmmxz/cmpt275-04-new.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ToMorning-ximinz.xcodeproj/project.xcworkspace</string>
+	<string>ToMorning-ximinz.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>95EE9A21DBF34A6A82F7E320E00DADC6F610AC3F</key>

@@ -45,14 +45,19 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
         }
     }
     
-    
+    var currlocation:CLLocation?{
+        didSet{
+            dispatch_async(dispatch_get_main_queue()){
+                self.loadweatherdata(self.currlocation!.coordinate)
+            }
+        }
+    }
     
     @IBAction func newEvent(segue:UIStoryboardSegue){
         print("aa")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
         locationManager.delegate=self
         locationManager.desiredAccuracy=kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -66,6 +71,7 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
     func getcalendar(){
         if(eventManage.iseventstoreavailable()){
             eventManage.getCalendar()
+            eventManage.getEvents(NSDate().dateByAddingTimeInterval(-360000), endDate: NSDate().dateByAddingTimeInterval(360000))
         }
     }
     
@@ -80,7 +86,7 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
             }
             //print(self.locationManager.location.coordinate.longitude)
             //print(self.locationManager.location.coordinate.latitude)
-            self.loadweatherdata(self.locationManager.location.coordinate)
+            self.currlocation=self.locationManager.location
             if placemarks.count > 0
             {
                 let pm = placemarks[0] as! CLPlacemark

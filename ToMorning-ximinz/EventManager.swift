@@ -37,7 +37,25 @@ class EventManager{
         }
         if(calendars.count>0){
             calendar = (calendars[0] as! EKCalendar)
+            print("Calendar is \(calendar!)")
         }
+    }
+    func getEvents(startDate:NSDate,endDate:NSDate){
+        let reminder = EKReminder(eventStore: self.eventStore)
+        
+        reminder.title = "Go to the store and buy milk"
+        reminder.calendar = eventStore.defaultCalendarForNewReminders()
+        
+        var error: NSError?
+        
+        eventStore.saveReminder(reminder, commit: true, error: &error)
+        
+        if let thiscalendar = calendar {
+            let predicate = self.eventStore.predicateForEventsWithStartDate(startDate, endDate: endDate, calendars:[thiscalendar])
+            let events = eventStore.eventsMatchingPredicate(predicate) as? [EKEvent]
+            print(events)
+        }
+        
     }
     
 }

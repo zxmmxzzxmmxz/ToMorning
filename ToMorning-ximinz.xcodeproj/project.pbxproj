@@ -19,6 +19,11 @@
 		2F11B18F1C051FE3009A5B38 /* newevent.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F11B18E1C051FE3009A5B38 /* newevent.png */; };
 		2F11B1911C0526B6009A5B38 /* okok.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F11B1901C0526B6009A5B38 /* okok.png */; };
 		2F5265DD1BF96CD3005DF6FD /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F5265D71BF96CD3005DF6FD /* cancel.png */; };
+		2F52D2FA1C0BD697008E35AD /* Dogs.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2F52D2F51C0BD697008E35AD /* Dogs.mp3 */; };
+		2F52D2FB1C0BD697008E35AD /* Phantom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2F52D2F61C0BD697008E35AD /* Phantom.mp3 */; };
+		2F52D2FC1C0BD697008E35AD /* Summer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2F52D2F71C0BD697008E35AD /* Summer.mp3 */; };
+		2F52D2FD1C0BD697008E35AD /* Truth.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2F52D2F81C0BD697008E35AD /* Truth.mp3 */; };
+		2F52D2FE1C0BD697008E35AD /* Whistle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2F52D2F91C0BD697008E35AD /* Whistle.mp3 */; };
 		2FE4F0361C07EBFF0004DDD6 /* IMG_6860.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 2FE4F0351C07EBFF0004DDD6 /* IMG_6860.PNG */; };
 		2FE4F0381C07F2290004DDD6 /* canc.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE4F0371C07F2290004DDD6 /* canc.png */; };
 		2FE4F03A1C07F2940004DDD6 /* cancc.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE4F0391C07F2940004DDD6 /* cancc.png */; };
@@ -33,11 +38,6 @@
 		4791AE091BFEADBF0050F0FF /* ReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791AE081BFEADBF0050F0FF /* ReportsViewController.swift */; };
 		4791AE0B1C026B0E0050F0FF /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791AE0A1C026B0E0050F0FF /* FileManager.swift */; };
 		4792CF741BFA3C3D00D6E6E1 /* Reports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4792CF731BFA3C3D00D6E6E1 /* Reports.swift */; };
-		47B00F361BEEDEF600297B85 /* Dogs.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47B00F311BEEDEF600297B85 /* Dogs.mp3 */; };
-		47B00F371BEEDEF600297B85 /* Phantom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47B00F321BEEDEF600297B85 /* Phantom.mp3 */; };
-		47B00F381BEEDEF600297B85 /* Summer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47B00F331BEEDEF600297B85 /* Summer.mp3 */; };
-		47B00F391BEEDEF600297B85 /* Truth.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47B00F341BEEDEF600297B85 /* Truth.mp3 */; };
-		47B00F3A1BEEDEF600297B85 /* Whistle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 47B00F351BEEDEF600297B85 /* Whistle.mp3 */; };
 		47B49DDB1BEDB9BE007919B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B49DDA1BEDB9BE007919B9 /* AppDelegate.swift */; };
 		47B49DDD1BEDB9BE007919B9 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B49DDC1BEDB9BE007919B9 /* AlarmViewController.swift */; };
 		47B49DE01BEDB9BE007919B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B49DDE1BEDB9BE007919B9 /* Main.storyboard */; };
@@ -72,6 +72,11 @@
 		2F11B18E1C051FE3009A5B38 /* newevent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newevent.png; sourceTree = "<group>"; };
 		2F11B1901C0526B6009A5B38 /* okok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = okok.png; sourceTree = "<group>"; };
 		2F5265D71BF96CD3005DF6FD /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
+		2F52D2F51C0BD697008E35AD /* Dogs.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dogs.mp3; sourceTree = "<group>"; };
+		2F52D2F61C0BD697008E35AD /* Phantom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Phantom.mp3; sourceTree = "<group>"; };
+		2F52D2F71C0BD697008E35AD /* Summer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Summer.mp3; sourceTree = "<group>"; };
+		2F52D2F81C0BD697008E35AD /* Truth.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Truth.mp3; sourceTree = "<group>"; };
+		2F52D2F91C0BD697008E35AD /* Whistle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Whistle.mp3; sourceTree = "<group>"; };
 		2FE4F0351C07EBFF0004DDD6 /* IMG_6860.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_6860.PNG; sourceTree = "<group>"; };
 		2FE4F0371C07F2290004DDD6 /* canc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = canc.png; sourceTree = "<group>"; };
 		2FE4F0391C07F2940004DDD6 /* cancc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancc.png; sourceTree = "<group>"; };
@@ -87,11 +92,6 @@
 		4791AE081BFEADBF0050F0FF /* ReportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
 		4791AE0A1C026B0E0050F0FF /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		4792CF731BFA3C3D00D6E6E1 /* Reports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reports.swift; sourceTree = "<group>"; };
-		47B00F311BEEDEF600297B85 /* Dogs.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dogs.mp3; sourceTree = "<group>"; };
-		47B00F321BEEDEF600297B85 /* Phantom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Phantom.mp3; sourceTree = "<group>"; };
-		47B00F331BEEDEF600297B85 /* Summer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Summer.mp3; sourceTree = "<group>"; };
-		47B00F341BEEDEF600297B85 /* Truth.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Truth.mp3; sourceTree = "<group>"; };
-		47B00F351BEEDEF600297B85 /* Whistle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Whistle.mp3; sourceTree = "<group>"; };
 		47B49DD51BEDB9BE007919B9 /* ToMorning-ximinz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToMorning-ximinz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B49DD91BEDB9BE007919B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47B49DDA1BEDB9BE007919B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +195,11 @@
 		47B49DD81BEDB9BE007919B9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2F52D2F51C0BD697008E35AD /* Dogs.mp3 */,
+				2F52D2F61C0BD697008E35AD /* Phantom.mp3 */,
+				2F52D2F71C0BD697008E35AD /* Summer.mp3 */,
+				2F52D2F81C0BD697008E35AD /* Truth.mp3 */,
+				2F52D2F91C0BD697008E35AD /* Whistle.mp3 */,
 				2FE4F0391C07F2940004DDD6 /* cancc.png */,
 				2FE4F0371C07F2290004DDD6 /* canc.png */,
 				2FE4F0351C07EBFF0004DDD6 /* IMG_6860.PNG */,
@@ -213,11 +218,6 @@
 				2F5265D71BF96CD3005DF6FD /* cancel.png */,
 				47B49DDA1BEDB9BE007919B9 /* AppDelegate.swift */,
 				47B49DE31BEDB9BE007919B9 /* LaunchScreen.xib */,
-				47B00F311BEEDEF600297B85 /* Dogs.mp3 */,
-				47B00F321BEEDEF600297B85 /* Phantom.mp3 */,
-				47B00F331BEEDEF600297B85 /* Summer.mp3 */,
-				47B00F341BEEDEF600297B85 /* Truth.mp3 */,
-				47B00F351BEEDEF600297B85 /* Whistle.mp3 */,
 				4747536F1BEECA070047CA9D /* IMG_6646.jpg */,
 				47B49DD91BEDB9BE007919B9 /* Info.plist */,
 			);
@@ -328,15 +328,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F52D2FD1C0BD697008E35AD /* Truth.mp3 in Resources */,
 				2F0C20041C02AB6200D7E9F4 /* mai.png in Resources */,
-				47B00F371BEEDEF600297B85 /* Phantom.mp3 in Resources */,
+				2F52D2FC1C0BD697008E35AD /* Summer.mp3 in Resources */,
 				B6E150481BEEAF590034E1FF /* Images-2.xcassets in Resources */,
+				2F52D2FB1C0BD697008E35AD /* Phantom.mp3 in Resources */,
 				47B49DE01BEDB9BE007919B9 /* Main.storyboard in Resources */,
 				2F5265DD1BF96CD3005DF6FD /* cancel.png in Resources */,
 				2F0C1FF91C02A87000D7E9F4 /* rep.png in Resources */,
 				2FE4F0381C07F2290004DDD6 /* canc.png in Resources */,
-				47B00F3A1BEEDEF600297B85 /* Whistle.mp3 in Resources */,
 				2F0C1FF81C02A87000D7E9F4 /* clo.png in Resources */,
+				2F52D2FA1C0BD697008E35AD /* Dogs.mp3 in Resources */,
 				2F0C1FFE1C02AA8200D7E9F4 /* fb.png in Resources */,
 				47B49DE51BEDB9BE007919B9 /* LaunchScreen.xib in Resources */,
 				2F0C1FF21C029FCA00D7E9F4 /* IMG_6774.PNG in Resources */,
@@ -344,15 +346,13 @@
 				2FE4F0361C07EBFF0004DDD6 /* IMG_6860.PNG in Resources */,
 				2F11B18F1C051FE3009A5B38 /* newevent.png in Resources */,
 				2FFABFF31C07E3DE00C26C78 /* IMG_6781.PNG in Resources */,
-				47B00F391BEEDEF600297B85 /* Truth.mp3 in Resources */,
 				2F0C1FFC1C02A95500D7E9F4 /* start.png in Resources */,
+				2F52D2FE1C0BD697008E35AD /* Whistle.mp3 in Resources */,
 				47B49DE21BEDB9BE007919B9 /* Images.xcassets in Resources */,
 				2F0C20001C02AABB00D7E9F4 /* ins.png in Resources */,
 				2FE4F03A1C07F2940004DDD6 /* cancc.png in Resources */,
 				474753701BEECA080047CA9D /* IMG_6646.jpg in Resources */,
-				47B00F361BEEDEF600297B85 /* Dogs.mp3 in Resources */,
 				2F0C1FFA1C02A87000D7E9F4 /* sett.png in Resources */,
-				47B00F381BEEDEF600297B85 /* Summer.mp3 in Resources */,
 				2F11B1911C0526B6009A5B38 /* okok.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

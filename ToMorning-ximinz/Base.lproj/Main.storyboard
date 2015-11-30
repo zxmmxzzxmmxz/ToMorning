@@ -531,22 +531,92 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About Us" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehi-7o-2Zw">
+                                <rect key="frame" x="247" y="388" width="106" height="48"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="40"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ximin Zhang    Email: ximinz@sfu.ca" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5l-q8-O7v">
+                                <rect key="frame" x="16" y="442" width="258" height="27"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Florence Hunag     Email: tha58@sfu.ca" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVd-Sw-mR8">
+                                <rect key="frame" x="16" y="490" width="288" height="27"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Shayne He     Email: xupengh@sfu.ca" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kj-rq-qkR">
+                                <rect key="frame" x="16" y="525" width="275" height="27"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Language" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNH-ZK-ev1">
+                                <rect key="frame" x="203" y="287" width="195" height="48"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="40"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jes-gX-pNw">
+                                <rect key="frame" x="546" y="343" width="38" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="中文">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKu-Pq-27r">
+                                <rect key="frame" x="76" y="352" width="50" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="English">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gw6-QH-S74" firstAttribute="leading" secondItem="zbg-aV-Oe6" secondAttribute="leadingMargin" constant="-16" id="19A-Rd-OBu"/>
                             <constraint firstItem="a3j-6A-yYM" firstAttribute="leading" secondItem="zbg-aV-Oe6" secondAttribute="leadingMargin" id="6Ws-L9-DrA"/>
                             <constraint firstItem="zQS-uq-xYj" firstAttribute="top" secondItem="Czb-DS-G9J" secondAttribute="bottom" constant="32" id="827-vM-QnJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jes-gX-pNw" secondAttribute="trailing" id="9in-X1-6n5"/>
+                            <constraint firstItem="8kj-rq-qkR" firstAttribute="leading" secondItem="zbg-aV-Oe6" secondAttribute="leadingMargin" id="B5u-bt-Q0Z"/>
                             <constraint firstItem="UZa-9r-gTm" firstAttribute="leading" secondItem="zbg-aV-Oe6" secondAttribute="leadingMargin" id="BEI-rM-KFU"/>
+                            <constraint firstItem="8kj-rq-qkR" firstAttribute="top" secondItem="fVd-Sw-mR8" secondAttribute="bottom" constant="8" symbolic="YES" id="BKZ-Bv-9sR"/>
+                            <constraint firstItem="mNH-ZK-ev1" firstAttribute="top" secondItem="UZa-9r-gTm" secondAttribute="bottom" constant="8" symbolic="YES" id="BMt-V7-A2q"/>
+                            <constraint firstItem="ehi-7o-2Zw" firstAttribute="top" secondItem="zQS-uq-xYj" secondAttribute="bottom" constant="183" id="F9M-ZI-BHR"/>
                             <constraint firstItem="UZa-9r-gTm" firstAttribute="top" secondItem="a3j-6A-yYM" secondAttribute="bottom" constant="8" symbolic="YES" id="Gpp-iF-rCX"/>
                             <constraint firstItem="a3j-6A-yYM" firstAttribute="top" secondItem="y0L-WK-0Ut" secondAttribute="bottom" constant="8" symbolic="YES" id="Gxr-TT-c3P"/>
                             <constraint firstItem="tAE-sN-g1B" firstAttribute="top" secondItem="gw6-QH-S74" secondAttribute="bottom" id="IS1-0k-WWY"/>
+                            <constraint firstItem="sKu-Pq-27r" firstAttribute="leading" secondItem="zbg-aV-Oe6" secondAttribute="leadingMargin" id="LNc-Mr-6d0"/>
+                            <constraint firstAttribute="centerX" secondItem="ehi-7o-2Zw" secondAttribute="centerX" id="M36-L8-xW8"/>
                             <constraint firstAttribute="centerX" secondItem="zQS-uq-xYj" secondAttribute="centerX" id="P3p-kZ-hvX"/>
+                            <constraint firstItem="fVd-Sw-mR8" firstAttribute="top" secondItem="x5l-q8-O7v" secondAttribute="bottom" constant="8" symbolic="YES" id="PRc-J7-K0x"/>
                             <constraint firstItem="gw6-QH-S74" firstAttribute="top" secondItem="Czb-DS-G9J" secondAttribute="bottom" id="WOD-lo-miy"/>
+                            <constraint firstItem="jes-gX-pNw" firstAttribute="top" secondItem="mNH-ZK-ev1" secondAttribute="bottom" constant="8" symbolic="YES" id="WYd-jR-ban"/>
+                            <constraint firstItem="ehi-7o-2Zw" firstAttribute="top" secondItem="mNH-ZK-ev1" secondAttribute="bottom" constant="8" symbolic="YES" id="ZAP-pn-9Ha"/>
                             <constraint firstItem="y0L-WK-0Ut" firstAttribute="top" secondItem="zQS-uq-xYj" secondAttribute="bottom" constant="-1" id="gZT-LE-6MK"/>
+                            <constraint firstAttribute="centerX" secondItem="mNH-ZK-ev1" secondAttribute="centerX" id="hVx-bO-Wu8"/>
                             <constraint firstItem="y0L-WK-0Ut" firstAttribute="leading" secondItem="zbg-aV-Oe6" secondAttribute="leadingMargin" id="hbo-H3-vTT"/>
+                            <constraint firstItem="ehi-7o-2Zw" firstAttribute="top" secondItem="sKu-Pq-27r" secondAttribute="bottom" constant="8" symbolic="YES" id="jDZ-PY-k97"/>
+                            <constraint firstItem="ehi-7o-2Zw" firstAttribute="top" secondItem="UZa-9r-gTm" secondAttribute="bottom" constant="8" symbolic="YES" id="jIa-Cs-qbl"/>
+                            <constraint firstItem="sKu-Pq-27r" firstAttribute="top" secondItem="mNH-ZK-ev1" secondAttribute="bottom" constant="8" symbolic="YES" id="kSq-0W-qNc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gw6-QH-S74" secondAttribute="trailing" constant="-16" id="qlc-8V-xwh"/>
+                            <constraint firstItem="fVd-Sw-mR8" firstAttribute="leading" secondItem="zbg-aV-Oe6" secondAttribute="leadingMargin" id="s5y-zj-BOr"/>
+                            <constraint firstItem="x5l-q8-O7v" firstAttribute="top" secondItem="ehi-7o-2Zw" secondAttribute="bottom" constant="8" symbolic="YES" id="sed-vV-Qi6"/>
+                            <constraint firstItem="x5l-q8-O7v" firstAttribute="leading" secondItem="zbg-aV-Oe6" secondAttribute="leadingMargin" id="t7g-o2-kUA"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="F9M-ZI-BHR"/>
+                                <exclude reference="ZAP-pn-9Ha"/>
+                                <exclude reference="jIa-Cs-qbl"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aw9-zU-YPN" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -74,6 +74,11 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
         eventTableView.backgroundView=UIImageView(image: UIImage(named: "IMG_6774.PNG"))
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.eventTableView.reloadData()
+    }
     func getcalendar(){
         if(eventManage.iseventstoreavailable()){
             eventManage.getCalendar()
@@ -85,6 +90,7 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
     func eventEditViewController(controller: EKEventEditViewController,
         didCompleteWithAction action: EKEventEditViewAction){
             self.dismissViewControllerAnimated(true, completion: nil)
+            NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "getcalendar", userInfo: nil, repeats: false)
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
@@ -118,7 +124,7 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
         let controller = EKEventEditViewController()
         controller.eventStore=eventManage.eventStore
         controller.editViewDelegate = self
-        controller.view.backgroundColor = UIColor(patternImage: UIImage(named:"IMG_6774.PNG")!)
+        //controller.view.backgroundColor = UIColor(patternImage: UIImage(named:"IMG_6774.PNG")!)
         self.presentViewController(controller, animated: true, completion: nil)
     }
 
@@ -175,7 +181,7 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events?.count ?? 1
+        return events?.count ?? 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -192,14 +198,20 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
     }
     
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let destination = segue.destinationViewController as? SingleEventViewController{
+            if events != nil{
+                destination.currevent = events![eventTableView.indexPathForSelectedRow()!.row]
+            }
+            destination.eventmanager = self.eventManage
+        }
     }
-    */
+    
 
 }

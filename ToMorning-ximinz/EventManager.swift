@@ -41,15 +41,6 @@ class EventManager{
         }
     }
     func getEvents()->[EKEvent]?{
-        let reminder = EKReminder(eventStore: self.eventStore)
-        
-        reminder.title = "Go to the store and buy milk"
-        reminder.calendar = eventStore.defaultCalendarForNewReminders()
-        
-        var error: NSError?
-        
-        eventStore.saveReminder(reminder, commit: true, error: &error)
-        
         var startDate=NSDate()
         var endDate=NSDate().dateByAddingTimeInterval(3600*24)
         var predicate2 = eventStore.predicateForEventsWithStartDate(startDate,
@@ -62,6 +53,7 @@ class EventManager{
                 println("标题  \(i.title)" )
                 println("开始时间: \(i.startDate)" )
                 println("结束时间: \(i.endDate)" )
+                println("comment:\(i.notes)")
             }
             return eV
         }
@@ -70,6 +62,13 @@ class EventManager{
             return []
         }
         
+    }
+    
+    func getEvent(eventid:String?)->EKEvent?{
+        if let existid = eventid{
+            return eventStore.eventWithIdentifier(eventid)
+        }
+        return nil
     }
 
     

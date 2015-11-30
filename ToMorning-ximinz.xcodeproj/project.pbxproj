@@ -38,6 +38,7 @@
 		4791AE091BFEADBF0050F0FF /* ReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791AE081BFEADBF0050F0FF /* ReportsViewController.swift */; };
 		4791AE0B1C026B0E0050F0FF /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791AE0A1C026B0E0050F0FF /* FileManager.swift */; };
 		4792CF741BFA3C3D00D6E6E1 /* Reports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4792CF731BFA3C3D00D6E6E1 /* Reports.swift */; };
+		4799FB201C0C19B400A00DD2 /* SingleEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799FB1F1C0C19B400A00DD2 /* SingleEventViewController.swift */; };
 		47B49DDB1BEDB9BE007919B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B49DDA1BEDB9BE007919B9 /* AppDelegate.swift */; };
 		47B49DDD1BEDB9BE007919B9 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B49DDC1BEDB9BE007919B9 /* AlarmViewController.swift */; };
 		47B49DE01BEDB9BE007919B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B49DDE1BEDB9BE007919B9 /* Main.storyboard */; };
@@ -92,6 +93,7 @@
 		4791AE081BFEADBF0050F0FF /* ReportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
 		4791AE0A1C026B0E0050F0FF /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		4792CF731BFA3C3D00D6E6E1 /* Reports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reports.swift; sourceTree = "<group>"; };
+		4799FB1F1C0C19B400A00DD2 /* SingleEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleEventViewController.swift; sourceTree = "<group>"; };
 		47B49DD51BEDB9BE007919B9 /* ToMorning-ximinz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToMorning-ximinz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B49DD91BEDB9BE007919B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47B49DDA1BEDB9BE007919B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				47B49DDC1BEDB9BE007919B9 /* AlarmViewController.swift */,
 				475BE21E1C059EA6007BD8A3 /* CalendarViewController.swift */,
+				4799FB1F1C0C19B400A00DD2 /* SingleEventViewController.swift */,
 				4791AE061BFEAB2C0050F0FF /* SingleReportViewController.swift */,
 				4791AE081BFEADBF0050F0FF /* ReportsViewController.swift */,
 				47B49DFC1BEDCF18007919B9 /* SetUpAlarmViewController.swift */,
@@ -383,6 +386,7 @@
 				4792CF741BFA3C3D00D6E6E1 /* Reports.swift in Sources */,
 				47B49DDB1BEDB9BE007919B9 /* AppDelegate.swift in Sources */,
 				4791AE051BFEAA090050F0FF /* GraphView.swift in Sources */,
+				4799FB201C0C19B400A00DD2 /* SingleEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

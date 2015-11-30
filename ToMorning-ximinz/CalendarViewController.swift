@@ -23,33 +23,19 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
     
     var currcity:String?{
         didSet{
-            cityLabel.text=currcity!
+            self.cityLabel.text = currcity
         }
     }
     
-    var currhumidity:Double?{
-        didSet{
-            humidityLabel.text=String(format: "%3.0f",currhumidity!)
-        }
-    }
+    var currhumidity:Double?
     
-    var currweather:String?{
-        didSet{
-            weatherLabel.text=currweather!
-        }
-    }
+    var currweather:String?
     
-    var currtemperature:Double?{
-        didSet{
-            temperatureLabel.text=String(format:"%.1f°C",currtemperature!)
-        }
-    }
+    var currtemperature:Double?
     
     var currlocation:CLLocation?{
         didSet{
-            dispatch_async(dispatch_get_main_queue()){
                 self.loadweatherdata(self.currlocation!.coordinate)
-            }
         }
     }
     
@@ -166,10 +152,32 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
                 }
                 //println("jsonObject :\(responseDict)")
                 //print(responseDict)
+                print("updating\n")
+                dispatch_async(dispatch_get_main_queue()){
+                    self.updateLabels()
+                }
             }
         }
         
         dataTask.resume()
+    }
+    
+    
+    func updateLabels(){
+        cityLabel.text=currcity ?? "Unknown"
+        if currhumidity != nil{
+            humidityLabel.text=String(format: "%3.0f",currhumidity!)
+        }
+        else{
+            humidityLabel.text = "Unkown"
+        }
+        weatherLabel.text=currweather ?? "Unknown"
+        if currtemperature != nil{
+            temperatureLabel.text=String(format:"%.1f°C",currtemperature!)
+        }
+        else{
+            temperatureLabel.text = "Unknown"
+        }
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

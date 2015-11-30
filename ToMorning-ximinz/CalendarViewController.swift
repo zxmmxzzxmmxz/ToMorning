@@ -8,8 +8,8 @@
 
 import UIKit
 import CoreLocation
-
-class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITableViewDataSource,UITableViewDelegate{
+import EventKitUI
+class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITableViewDataSource,UITableViewDelegate,EKEventEditViewDelegate{
 
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
@@ -53,6 +53,12 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
         }
     }
     
+    var events : [EKEvent]?{
+        didSet{
+            eventTableView.reloadData()
+        }
+    }
+    
     @IBAction func newEvent(segue:UIStoryboardSegue){
         print("aa")
     }
@@ -71,8 +77,14 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
     func getcalendar(){
         if(eventManage.iseventstoreavailable()){
             eventManage.getCalendar()
-            eventManage.getEvents(NSDate().dateByAddingTimeInterval(-360000), endDate: NSDate().dateByAddingTimeInterval(360000))
+            self.events = eventManage.getEvents()
+            
         }
+    }
+    
+    func eventEditViewController(controller: EKEventEditViewController,
+        didCompleteWithAction action: EKEventEditViewAction){
+            self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
@@ -101,6 +113,13 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
                 println("Error with the data.")
             }
         })
+    }
+    @IBAction func createEvent(sender: AnyObject) {
+        let controller = EKEventEditViewController()
+        controller.eventStore=eventManage.eventStore
+        controller.editViewDelegate = self
+        controller.view.backgroundColor = UIColor(patternImage: UIImage(named:"IMG_6774.PNG")!)
+        self.presentViewController(controller, animated: true, completion: nil)
     }
 
     
@@ -156,13 +175,18 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return events?.count ?? 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let dequeued: AnyObject = tableView.dequeueReusableCellWithIdentifier("eventCell", forIndexPath: indexPath)
         let cell = dequeued as! UITableViewCell
-        cell.textLabel?.text="123"
+        if self.events != nil {
+            cell.textLabel?.text = self.events![indexPath.row].title
+        }
+        else {
+            cell.textLabel?.text=""
+        }
         cell.backgroundColor=UIColor.lightGrayColor()
         return cell
     }

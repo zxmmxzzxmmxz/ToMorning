@@ -8,23 +8,23 @@
 
 import Foundation
 import EventKit
+import EventKitUI
 class EventManager{
     private var eventstoreavailable = false
     private var calendar:EKCalendar?
     let eventStore = EKEventStore()
     func checkCalendarAuthorizationStatus() {
-        eventStore.requestAccessToEntityType(EKEntityTypeReminder,
-            completion: {(granted: Bool, error:NSError!) in
-                if !granted {
-                    print("Access to store not granted")
-                    print("error is: \(error.description)")
-                }
-                else{
-                    print("something")
-                    self.eventstoreavailable = true
-                }
-        })
-    }
+        eventStore.requestAccessToEntityType(EKEntityTypeEvent, completion: {
+            (accessGranted: Bool, error: NSError?) in
+            
+            if accessGranted == true {
+                self.eventstoreavailable=true
+            } else {
+                dispatch_async(dispatch_get_main_queue(), {
+                    //self.needPermissionView.fadeIn()
+                })
+            }
+        })    }
     
     func iseventstoreavailable()->Bool{
         print(eventstoreavailable)
@@ -40,7 +40,7 @@ class EventManager{
             print("Calendar is \(calendar!)")
         }
     }
-    func getEvents(startDate:NSDate,endDate:NSDate){
+    func getEvents()->[EKEvent]?{
         let reminder = EKReminder(eventStore: self.eventStore)
         
         reminder.title = "Go to the store and buy milk"
@@ -50,12 +50,27 @@ class EventManager{
         
         eventStore.saveReminder(reminder, commit: true, error: &error)
         
-        if let thiscalendar = calendar {
-            let predicate = self.eventStore.predicateForEventsWithStartDate(startDate, endDate: endDate, calendars:[thiscalendar])
-            let events = eventStore.eventsMatchingPredicate(predicate) as? [EKEvent]
-            print(events)
+        var startDate=NSDate()
+        var endDate=NSDate().dateByAddingTimeInterval(3600*24)
+        var predicate2 = eventStore.predicateForEventsWithStartDate(startDate,
+            endDate: endDate, calendars: nil)
+        
+        var eV = eventStore.eventsMatchingPredicate(predicate2) as? [EKEvent]
+        
+        if eV != nil {
+            for i in eV! {
+                println("标题  \(i.title)" )
+                println("开始时间: \(i.startDate)" )
+                println("结束时间: \(i.endDate)" )
+            }
+            return eV
+        }
+
+        else{
+            return []
         }
         
     }
+
     
 }

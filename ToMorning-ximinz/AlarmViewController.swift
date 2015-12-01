@@ -144,8 +144,8 @@ class AlarmViewController: UIViewController {
         let infomanager = InfoManager()
         //print("here2")
         super.viewWillAppear(animated)
-        //print("hehe, image should be \(infomanager.currbackgroundimg)")
         self.backgroundimageview.image = UIImage(named: infomanager.currbackgroundimg)
+        updatelabelsusinglanguange(infomanager.currlanguange)
         analogClockView.setNeedsDisplay()
         timerforalarm = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "triggerAlarm", userInfo: nil, repeats: true)
         //timerforclock = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: "renewAnalogClock", userInfo: nil, repeats: true)
@@ -169,6 +169,19 @@ class AlarmViewController: UIViewController {
         timerforreport=nil
     }
     
+    @IBOutlet weak var youralarmlabel: UILabel!
+    
+    
+    func updatelabelsusinglanguange(languange:String){
+        if(languange == "Chinese"){
+            youralarmlabel.text = "您的闹钟"
+            messageLabel.text = "请戴上iWatch，好梦！"
+        }
+        else{
+            youralarmlabel.text = "Your Alarm"
+            messageLabel.text = message
+        }
+    }
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////

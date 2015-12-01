@@ -51,7 +51,6 @@ class InfoManager{
     }
     func setlanguange(name:String){
         currlanguange = name
-        currbackgroundimg = name
         let homeDirectory = NSHomeDirectory()
         let documentPaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         let documentPath = documentPaths[0] as! String

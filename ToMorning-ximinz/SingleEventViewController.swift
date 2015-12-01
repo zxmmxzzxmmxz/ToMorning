@@ -42,7 +42,30 @@ class SingleEventViewController: UIViewController,EKEventEditViewDelegate {
         super.viewWillAppear(animated)
         let infomanager = InfoManager()
         self.backgroundimageview.image = UIImage(named: infomanager.currbackgroundimg)
+        self.updatelabelsusinglanguange(infomanager.currlanguange)
     }
+    @IBOutlet weak var eventlabel: UILabel!
+    @IBOutlet weak var eventlocationlabel: UILabel!
+    @IBOutlet weak var eventtimelabel: UILabel!
+    @IBOutlet weak var editbutton: UIButton!
+    @IBOutlet weak var noteslabel: UILabel!
+    func updatelabelsusinglanguange(languange:String){
+        if(languange == "Chinese"){
+            eventlabel.text = "待办事项"
+            editbutton.setTitle("编辑", forState: .Normal)
+            eventtimelabel.text = "时间："
+            eventlocationlabel.text = "地点："
+            noteslabel.text = "详细："
+        }
+        else{
+            eventlabel.text = "Event"
+            eventlocationlabel.text = "Location:"
+            eventtimelabel.text = "Time:"
+            editbutton.setTitle("Edit", forState: .Normal)
+            noteslabel.text = "Notes"
+        }
+    }
+    
     func updatelabels(){
         if let event = currevent{
             eventTitleLabel.text = event.title

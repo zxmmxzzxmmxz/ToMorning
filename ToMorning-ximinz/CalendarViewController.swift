@@ -11,6 +11,7 @@ import CoreLocation
 import EventKitUI
 class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITableViewDataSource,UITableViewDelegate,EKEventEditViewDelegate{
 
+    @IBOutlet weak var datelabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
@@ -51,6 +52,9 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "MMM.dd,yyyy EEEE"
+        datelabel.text = formatter.stringFromDate(NSDate())
         locationManager.delegate=self
         locationManager.desiredAccuracy=kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -67,11 +71,35 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        updatelabelsusinglanguange(infomanager.currlanguange)
         events = eventManage.getEvents()
         self.eventTableView.reloadData()
         backgroundimageview.image = UIImage(named: infomanager.currbackgroundimg)
         
     }
+    
+    @IBOutlet weak var todolistlabel: UILabel!
+    @IBOutlet weak var temperaturetitlelabel: UILabel!
+    @IBOutlet weak var weathertitlelabel: UILabel!
+    @IBOutlet weak var humiditytitlelabel: UILabel!
+    @IBOutlet weak var citytitlelabel: UILabel!
+    func updatelabelsusinglanguange(languange:String){
+        if(languange == "Chinese"){
+            temperaturetitlelabel.text = "温度："
+            weathertitlelabel.text = "天气："
+            humiditytitlelabel.text = "湿度："
+            citytitlelabel.text = "城市："
+            todolistlabel.text = "待办事项"
+        }
+        else{
+            temperaturetitlelabel.text = "City:"
+            weathertitlelabel.text = "Humidity:"
+            humiditytitlelabel.text = "Weather:"
+            citytitlelabel.text = "Temperature:"
+            todolistlabel.text = "To Do List"
+        }
+    }
+    
     func getevents(){
         if(eventManage.iseventstoreavailable()){
             self.events = eventManage.getEvents()
@@ -171,7 +199,7 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
     func updateLabels(){
         cityLabel.text=currcity ?? "Unknown"
         if currhumidity != nil{
-            humidityLabel.text=String(format: "%3.0f",currhumidity!)
+            humidityLabel.text=String(format: "%3.0f %",currhumidity!)
         }
         else{
             humidityLabel.text = "Unkown"

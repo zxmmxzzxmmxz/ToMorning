@@ -11,6 +11,8 @@ import UIKit
 class SetUpAlarmViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate{
 
     
+    @IBOutlet weak var selectyourringtonelabel: UILabel!
+    @IBOutlet weak var selectyouralarmtimelabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBOutlet weak var backgroundimageview: UIImageView!
@@ -33,8 +35,20 @@ class SetUpAlarmViewController: UIViewController,UIPickerViewDataSource,UIPicker
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.backgroundimageview.image = UIImage(named: infomanager.currbackgroundimg)
+        updatelabelsusinglanguange(infomanager.currlanguange)
     }
 
+    func updatelabelsusinglanguange(languange:String){
+        if(languange == "Chinese"){
+            selectyouralarmtimelabel.text = "选择您的闹钟时间"
+            selectyourringtonelabel.text = "选择您的铃声"
+        }
+        else{
+            selectyouralarmtimelabel.text = "Select Your Alarm Time"
+            selectyourringtonelabel.text = "Select Your Ringtone"
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

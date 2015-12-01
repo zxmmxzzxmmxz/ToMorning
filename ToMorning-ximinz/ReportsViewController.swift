@@ -10,6 +10,7 @@ import UIKit
 
 @IBDesignable class ReportsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
+    @IBOutlet weak var reportlistlabel: UILabel!
     @IBOutlet weak var backgroundimageview: UIImageView!
     @IBOutlet weak var tv: UITableView!
     var heartratearray = ["sample"]
@@ -30,6 +31,12 @@ import UIKit
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.backgroundimageview.image = UIImage(named: infomanager.currbackgroundimg)
+        if(infomanager.currlanguange == "Chinese"){
+            reportlistlabel.text="您的睡眠报告:"
+        }
+        else{
+            reportlistlabel.text = "Your Report List:"
+        }
     }
 
     

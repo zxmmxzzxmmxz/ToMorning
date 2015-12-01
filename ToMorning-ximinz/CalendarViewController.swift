@@ -20,6 +20,7 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
     
     let locationManager = CLLocationManager()
     let eventManage = EventManager()
+    let infomanager = InfoManager()
     
     var currcity:String?{
         didSet{
@@ -55,28 +56,32 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         eventManage.checkCalendarAuthorizationStatus()
-        print("getting calendar")
-        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "getcalendar", userInfo: nil, repeats: false)
-        eventTableView.backgroundView=UIImageView(image: UIImage(named: "IMG_6774.PNG"))
+        print("getting events")
+        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "getevents", userInfo: nil, repeats: false)
+        //eventTableView.backgroundView=UIImageView(image: UIImage(named: "IMG_6774.PNG"))
+        eventTableView.backgroundColor = UIColor.clearColor()
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var backgroundimageview: UIImageView!
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        events = eventManage.getEvents()
         self.eventTableView.reloadData()
+        backgroundimageview.image = UIImage(named: infomanager.currbackgroundimg)
+        
     }
-    func getcalendar(){
+    func getevents(){
         if(eventManage.iseventstoreavailable()){
-            eventManage.getCalendar()
             self.events = eventManage.getEvents()
-            
         }
     }
     
     func eventEditViewController(controller: EKEventEditViewController,
         didCompleteWithAction action: EKEventEditViewAction){
             self.dismissViewControllerAnimated(true, completion: nil)
-            NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "getcalendar", userInfo: nil, repeats: false)
+            NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "getevents", userInfo: nil, repeats: false)
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
@@ -180,9 +185,7 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
         }
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return UIImageView(image: UIImage(named: "IMG_6774.PNG"))
-    }
+    
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1

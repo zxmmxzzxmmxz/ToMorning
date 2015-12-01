@@ -13,13 +13,14 @@ class SetUpAlarmViewController: UIViewController,UIPickerViewDataSource,UIPicker
     
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    @IBOutlet weak var backgroundimageview: UIImageView!
     @IBOutlet weak var musicTab: UIPickerView!
     
     //@IBOutlet weak var analogClockView : AnalogClock!
     
     let musicList = ["Summer","Whistle","Truth","Phantom","Dogs"]
     var musicTitle = "Summer"
-
+    let infomanager = InfoManager()
     
     
     override func viewDidLoad() {
@@ -27,6 +28,11 @@ class SetUpAlarmViewController: UIViewController,UIPickerViewDataSource,UIPicker
         self.navigationController?.interactivePopGestureRecognizer.enabled = false
         datePicker.datePickerMode = UIDatePickerMode.Time
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.backgroundimageview.image = UIImage(named: infomanager.currbackgroundimg)
     }
 
     override func didReceiveMemoryWarning() {

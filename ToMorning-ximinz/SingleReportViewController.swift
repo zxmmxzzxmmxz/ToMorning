@@ -53,6 +53,13 @@ class SingleReportViewController: UIViewController,GraphViewDelegate{
         // Do any additional setup after loading the view.
     }
 
+    @IBOutlet weak var backgroundimageview: UIImageView!
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let infomanager = InfoManager()
+        self.backgroundimageview.image = UIImage(named: infomanager.currbackgroundimg)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

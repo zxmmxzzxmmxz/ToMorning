@@ -30,6 +30,8 @@
 		2FFABFF31C07E3DE00C26C78 /* IMG_6781.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 2FFABFF01C07E3DE00C26C78 /* IMG_6781.PNG */; };
 		470B55A61BF80490008C1D80 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470B55A51BF80490008C1D80 /* HealthKit.framework */; };
 		470B55A91BF804C1008C1D80 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B55A81BF804C1008C1D80 /* HealthManager.swift */; };
+		47450AB81C0D0DA30094AB2C /* InfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47450AB71C0D0DA30094AB2C /* InfoManager.swift */; };
+		47450ABA1C0D1C8B0094AB2C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47450AB91C0D1C8B0094AB2C /* SettingsViewController.swift */; };
 		474753701BEECA080047CA9D /* IMG_6646.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4747536F1BEECA070047CA9D /* IMG_6646.jpg */; };
 		475BE21F1C059EA6007BD8A3 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475BE21E1C059EA6007BD8A3 /* CalendarViewController.swift */; };
 		478D96171C0AFDD5000A13B9 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478D96161C0AFDD5000A13B9 /* EventManager.swift */; };
@@ -85,6 +87,8 @@
 		470B55A51BF80490008C1D80 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		470B55A71BF80490008C1D80 /* ToMorning-ximinz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "ToMorning-ximinz.entitlements"; sourceTree = "<group>"; };
 		470B55A81BF804C1008C1D80 /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
+		47450AB71C0D0DA30094AB2C /* InfoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoManager.swift; sourceTree = "<group>"; };
+		47450AB91C0D1C8B0094AB2C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4747536F1BEECA070047CA9D /* IMG_6646.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_6646.jpg; sourceTree = "<group>"; };
 		475BE21E1C059EA6007BD8A3 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		478D96161C0AFDD5000A13B9 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 				4792CF731BFA3C3D00D6E6E1 /* Reports.swift */,
 				478D96161C0AFDD5000A13B9 /* EventManager.swift */,
 				4791AE0A1C026B0E0050F0FF /* FileManager.swift */,
+				47450AB71C0D0DA30094AB2C /* InfoManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 				47B49DDC1BEDB9BE007919B9 /* AlarmViewController.swift */,
 				475BE21E1C059EA6007BD8A3 /* CalendarViewController.swift */,
 				4799FB1F1C0C19B400A00DD2 /* SingleEventViewController.swift */,
+				47450AB91C0D1C8B0094AB2C /* SettingsViewController.swift */,
 				4791AE061BFEAB2C0050F0FF /* SingleReportViewController.swift */,
 				4791AE081BFEADBF0050F0FF /* ReportsViewController.swift */,
 				47B49DFC1BEDCF18007919B9 /* SetUpAlarmViewController.swift */,
@@ -377,10 +383,12 @@
 				470B55A91BF804C1008C1D80 /* HealthManager.swift in Sources */,
 				47B49DFB1BEDBA23007919B9 /* AnalogClock.swift in Sources */,
 				47B49DDD1BEDB9BE007919B9 /* AlarmViewController.swift in Sources */,
+				47450AB81C0D0DA30094AB2C /* InfoManager.swift in Sources */,
 				475BE21F1C059EA6007BD8A3 /* CalendarViewController.swift in Sources */,
 				47B49DFD1BEDCF18007919B9 /* SetUpAlarmViewController.swift in Sources */,
 				4791AE091BFEADBF0050F0FF /* ReportsViewController.swift in Sources */,
 				478D96171C0AFDD5000A13B9 /* EventManager.swift in Sources */,
+				47450ABA1C0D1C8B0094AB2C /* SettingsViewController.swift in Sources */,
 				4791AE0B1C026B0E0050F0FF /* FileManager.swift in Sources */,
 				4791AE071BFEAB2C0050F0FF /* SingleReportViewController.swift in Sources */,
 				4792CF741BFA3C3D00D6E6E1 /* Reports.swift in Sources */,

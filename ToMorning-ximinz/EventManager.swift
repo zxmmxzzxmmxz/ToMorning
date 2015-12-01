@@ -30,16 +30,7 @@ class EventManager{
         print(eventstoreavailable)
         return eventstoreavailable
     }
-    func getCalendar(){
-        let calendars = eventStore.calendarsForEntityType(EKEntityTypeReminder)
-        for i in calendars as! [EKCalendar] {
-            println("Calendar = \(i.title)")
-        }
-        if(calendars.count>0){
-            calendar = (calendars[0] as! EKCalendar)
-            print("Calendar is \(calendar!)")
-        }
-    }
+
     func getEvents()->[EKEvent]?{
         var startDate=NSDate()
         var endDate=NSDate().dateByAddingTimeInterval(3600*24)
@@ -49,12 +40,6 @@ class EventManager{
         var eV = eventStore.eventsMatchingPredicate(predicate2) as? [EKEvent]
         
         if eV != nil {
-            for i in eV! {
-                println("标题  \(i.title)" )
-                println("开始时间: \(i.startDate)" )
-                println("结束时间: \(i.endDate)" )
-                println("comment:\(i.notes)")
-            }
             return eV
         }
 

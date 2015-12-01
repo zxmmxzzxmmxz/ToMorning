@@ -139,9 +139,13 @@ class AlarmViewController: UIViewController {
         //print("here3")
         self.navigationController?.interactivePopGestureRecognizer.enabled = false
     }
-    
+    @IBOutlet weak var backgroundimageview: UIImageView!
     override func viewWillAppear(animated: Bool) {
+        let infomanager = InfoManager()
         //print("here2")
+        super.viewWillAppear(animated)
+        //print("hehe, image should be \(infomanager.currbackgroundimg)")
+        self.backgroundimageview.image = UIImage(named: infomanager.currbackgroundimg)
         analogClockView.setNeedsDisplay()
         timerforalarm = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "triggerAlarm", userInfo: nil, repeats: true)
         //timerforclock = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: "renewAnalogClock", userInfo: nil, repeats: true)
@@ -165,6 +169,8 @@ class AlarmViewController: UIViewController {
         timerforreport=nil
     }
     
+
+
     ////////////////////////////////////////////////////////////////////////////////////////////
     // triggerAlarm()
     // Input: Null

@@ -10,13 +10,15 @@ import UIKit
 
 @IBDesignable class ReportsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
+    @IBOutlet weak var backgroundimageview: UIImageView!
     @IBOutlet weak var tv: UITableView!
     var heartratearray = ["sample"]
     let fileManager = FileManager()
+    let infomanager = InfoManager()
     //var healthManager:HealthManager?
     override func viewDidLoad() {
         super.viewDidLoad()
-        tv.backgroundView = UIImageView(image: UIImage(named: "IMG_6774.PNG"))
+        tv.backgroundColor = UIColor.clearColor()
         //selected=heartratearray.count
         let filelist = fileManager.gettitlelist()
         //print("filelist is \(filelist)")
@@ -25,10 +27,11 @@ import UIKit
         }
         // Do any additional setup after loading the view.
     }
-
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return UIImageView(image: UIImage(named: "IMG_6774.PNG"))
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.backgroundimageview.image = UIImage(named: infomanager.currbackgroundimg)
     }
+
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1

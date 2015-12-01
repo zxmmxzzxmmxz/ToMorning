@@ -87,13 +87,13 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
         if(languange == "Chinese"){
             temperaturetitlelabel.text = "温度："
             weathertitlelabel.text = "天气："
-            humiditytitlelabel.text = "湿度："
+            humiditytitlelabel.text = "湿度(%)："
             citytitlelabel.text = "城市："
             todolistlabel.text = "待办事项"
         }
         else{
             temperaturetitlelabel.text = "City:"
-            weathertitlelabel.text = "Humidity:"
+            weathertitlelabel.text = "Humidity(%):"
             humiditytitlelabel.text = "Weather:"
             citytitlelabel.text = "Temperature:"
             todolistlabel.text = "To Do List"
@@ -199,7 +199,7 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
     func updateLabels(){
         cityLabel.text=currcity ?? "Unknown"
         if currhumidity != nil{
-            humidityLabel.text=String(format: "%3.0f %",currhumidity!)
+            humidityLabel.text=String(format: "%3.0f",currhumidity!)
         }
         else{
             humidityLabel.text = "Unkown"

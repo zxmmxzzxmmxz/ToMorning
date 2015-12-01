@@ -105,6 +105,8 @@ class SingleEventViewController: UIViewController,EKEventEditViewDelegate {
             if(eventmanager != nil){
                 if(eventmanager!.iseventstoreavailable()){
                     currevent = eventmanager!.getEvent(eventid)
+                    if(currevent==nil){
+                    }
                 }
             }
             else{

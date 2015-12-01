@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Social
 class SingleReportViewController: UIViewController,GraphViewDelegate{
     @IBOutlet weak var gotobedtimelabel: UILabel!
     @IBOutlet weak var sleepingtimeintotallabel: UILabel!
@@ -95,6 +95,21 @@ class SingleReportViewController: UIViewController,GraphViewDelegate{
             }
         }
     }
+    
+    @IBAction func shareonfacebook(sender: AnyObject) {
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook){
+            var facebookSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            let slepthours:Int = self.sleepingtimeintotallabel.text?.toInt() ?? 0
+            let deepsleep:Int = self.deepsleepintotallabel.text?.toInt() ?? 0
+            facebookSheet.setInitialText("I Slept \(slepthours) last night!\n total deep sleep:\(deepsleep) minutes!\nAnd I Feel Great!\n\nShared from ToMorning")
+            self.presentViewController(facebookSheet, animated: true, completion: nil)
+        } else {
+            var alert = UIAlertController(title: "Accounts", message: "Please login to a Facebook account to share.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

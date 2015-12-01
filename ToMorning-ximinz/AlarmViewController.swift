@@ -175,11 +175,15 @@ class AlarmViewController: UIViewController {
     func updatelabelsusinglanguange(languange:String){
         if(languange == "Chinese"){
             youralarmlabel.text = "您的闹钟"
-            messageLabel.text = "请戴上iWatch，好梦！"
+            if(alarmactive){
+                messageLabel.text = "请戴上iWatch，好梦！"
+            }
         }
         else{
             youralarmlabel.text = "Your Alarm"
-            messageLabel.text = message
+            if(alarmactive){
+                messageLabel.text = message
+            }
         }
     }
 

@@ -109,6 +109,35 @@ class SingleReportViewController: UIViewController,GraphViewDelegate{
             self.presentViewController(alert, animated: true, completion: nil)
         }
     }
+
+    @IBAction func shareontwitter(sender: AnyObject) {
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter){
+            var twitterSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            let slepthours:Int = self.sleepingtimeintotallabel.text?.toInt() ?? 0
+            let deepsleep:Int = self.deepsleepintotallabel.text?.toInt() ?? 0
+            twitterSheet.setInitialText("I Slept \(slepthours) hours last night!\n total deep sleep:\(deepsleep) minutes!\nAnd I Feel Great!\n\nShared from ToMorning")
+            self.presentViewController(twitterSheet, animated: true, completion: nil)
+        } else {
+            var alert = UIAlertController(title: "Accounts", message: "Please login to a twitter account to share.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+
+    }
+    
+    @IBAction func shareonweibo(sender: AnyObject) {
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeSinaWeibo){
+            var weiboSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeSinaWeibo)
+            let slepthours:Int = self.sleepingtimeintotallabel.text?.toInt() ?? 0
+            let deepsleep:Int = self.deepsleepintotallabel.text?.toInt() ?? 0
+            weiboSheet.setInitialText("I Slept \(slepthours) hours last night!\n total deep sleep:\(deepsleep) minutes!\nAnd I Feel Great!\n\nShared from ToMorning")
+            self.presentViewController(weiboSheet, animated: true, completion: nil)
+        } else {
+            var alert = UIAlertController(title: "Accounts", message: "Please login to a WeiBo account to share.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
     
     /*
     // MARK: - Navigation

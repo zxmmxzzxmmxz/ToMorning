@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xAl-KD-TMQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xAl-KD-TMQ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -699,15 +699,21 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aj-GV-Yho">
                                 <rect key="frame" x="271" y="542" width="58" height="58"/>
-                                <state key="normal" image="mai.png">
+                                <state key="normal" image="twit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="shareontwitter:" destination="fdd-nR-ESI" eventType="touchUpInside" id="FJ6-uS-mpC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUC-mW-HYE">
                                 <rect key="frame" x="337" y="542" width="58" height="58"/>
-                                <state key="normal" image="ins.png">
+                                <state key="normal" image="weibo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="shareonweibo:" destination="fdd-nR-ESI" eventType="touchUpInside" id="wIc-iZ-alg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxn-jH-OdX">
                                 <rect key="frame" x="200" y="542" width="58" height="58"/>
@@ -1048,11 +1054,11 @@
         <image name="cancc.png" width="58" height="58"/>
         <image name="clo.png" width="58" height="58"/>
         <image name="fb.png" width="58" height="58"/>
-        <image name="ins.png" width="58" height="58"/>
-        <image name="mai.png" width="58" height="58"/>
         <image name="newevent.png" width="58" height="58"/>
         <image name="rep.png" width="58" height="58"/>
         <image name="sett.png" width="58" height="58"/>
         <image name="start.png" width="58" height="58"/>
+        <image name="twit" width="58" height="58"/>
+        <image name="weibo" width="58" height="58"/>
     </resources>
 </document>

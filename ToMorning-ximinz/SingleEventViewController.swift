@@ -73,11 +73,13 @@ class SingleEventViewController: UIViewController,EKEventEditViewDelegate {
             formatter.dateFormat = "HH:mm"
             eventTimeLabel.text = formatter.stringFromDate(event.startDate) + "-" + formatter.stringFromDate(event.endDate)
             noteTextView.text = event.notes
+            eventLocationLabel.text = event.location
         }
         else{
             eventTitleLabel.text = "Unknown"
             eventTimeLabel.text = "Unknown"
             noteTextView.text = "Unknown"
+            eventLocationLabel.text = "Unknown"
         }
     }
 

@@ -47,15 +47,18 @@ class Reports{
     }
     
     func getlightsleeptime()->Int{
-        return lightsleepintotal
+        return 200
+        //return lightsleepintotal
     }
     
     func getdeepsleeptime()->Int{
-        return deepsleepintotal
+        return 100
+        //return deepsleepintotal
     }
     
     func getwholeinarray()->NSArray{
-        return NSArray(array: [startdate!,enddate!,lightsleepintotal,deepsleepintotal,datapoints])
+        return NSArray(array: [startdate!,enddate!,lightsleepintotal,deepsleepintotal,[54,54,51,57,51,49,46,54,54,51,49,49,51,74,54,88,77,138,61,77,88,54,81,54,52,81,50,97,77,49,49,51,46]])
+        //return NSArray(array: [startdate!,enddate!,lightsleepintotal,deepsleepintotal,datapoints])
     }
     
     func loadfromarray(array:NSArray){

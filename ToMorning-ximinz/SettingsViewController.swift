@@ -18,7 +18,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var ThemeButton3: UIButton!
     @IBOutlet weak var ThemeButton2: UIButton!
     @IBOutlet weak var ThemeButton1: UIButton!
-    var currbackgroundimg = "IMG_6781.PNG"
+    var currbackgroundimg = "IMG_6774.PNG"
     let infomanager = InfoManager()
     override func viewDidLoad() {
         super.viewDidLoad()

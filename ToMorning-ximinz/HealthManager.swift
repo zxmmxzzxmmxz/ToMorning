@@ -125,7 +125,9 @@ class HealthManager {
         }
         // Don't forget to execute the Query!
         healthStore?.executeQuery(stepsSampleQuery)
-        return self.rateresult
+        let temp = self.rateresult
+        cleardata()
+        return temp
     }
     
     
@@ -153,5 +155,9 @@ class HealthManager {
         
         self.healthStore!.saveObject(heartRateSample, withCompletion: completion)
         
+    }
+    
+    func cleardata(){
+        rateresult = nil
     }
 }

@@ -49,7 +49,7 @@
 		47B49DF11BEDB9BE007919B9 /* ToMorning_ximinzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B49DF01BEDB9BE007919B9 /* ToMorning_ximinzTests.swift */; };
 		47B49DFB1BEDBA23007919B9 /* AnalogClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B49DFA1BEDBA23007919B9 /* AnalogClock.swift */; };
 		47B49DFD1BEDCF18007919B9 /* SetUpAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B49DFC1BEDCF18007919B9 /* SetUpAlarmViewController.swift */; };
-		47E138291C14FC9D0026C6D7 /* Designbolts-Free-Valentine-Heart-Heart-Shadow.ico in Resources */ = {isa = PBXBuildFile; fileRef = 47E138281C14FC9D0026C6D7 /* Designbolts-Free-Valentine-Heart-Heart-Shadow.ico */; };
+		47E138291C14FC9D0026C6D7 /* redheart.ico in Resources */ = {isa = PBXBuildFile; fileRef = 47E138281C14FC9D0026C6D7 /* redheart.ico */; };
 		B6E150481BEEAF590034E1FF /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E150471BEEAF590034E1FF /* Images-2.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -111,7 +111,7 @@
 		47B49DF01BEDB9BE007919B9 /* ToMorning_ximinzTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToMorning_ximinzTests.swift; sourceTree = "<group>"; };
 		47B49DFA1BEDBA23007919B9 /* AnalogClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalogClock.swift; sourceTree = "<group>"; };
 		47B49DFC1BEDCF18007919B9 /* SetUpAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpAlarmViewController.swift; sourceTree = "<group>"; };
-		47E138281C14FC9D0026C6D7 /* Designbolts-Free-Valentine-Heart-Heart-Shadow.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "Designbolts-Free-Valentine-Heart-Heart-Shadow.ico"; sourceTree = "<group>"; };
+		47E138281C14FC9D0026C6D7 /* redheart.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = redheart.ico; sourceTree = "<group>"; };
 		B6E150471BEEAF590034E1FF /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,7 +208,7 @@
 			children = (
 				2F52D2F51C0BD697008E35AD /* Dogs.mp3 */,
 				2F52D2F61C0BD697008E35AD /* Phantom.mp3 */,
-				47E138281C14FC9D0026C6D7 /* Designbolts-Free-Valentine-Heart-Heart-Shadow.ico */,
+				47E138281C14FC9D0026C6D7 /* redheart.ico */,
 				2F52D2F71C0BD697008E35AD /* Summer.mp3 */,
 				2F52D2F81C0BD697008E35AD /* Truth.mp3 */,
 				2F52D2F91C0BD697008E35AD /* Whistle.mp3 */,
@@ -343,7 +343,7 @@
 				2F52D2FD1C0BD697008E35AD /* Truth.mp3 in Resources */,
 				2F0C20041C02AB6200D7E9F4 /* mai.png in Resources */,
 				2F52D2FC1C0BD697008E35AD /* Summer.mp3 in Resources */,
-				47E138291C14FC9D0026C6D7 /* Designbolts-Free-Valentine-Heart-Heart-Shadow.ico in Resources */,
+				47E138291C14FC9D0026C6D7 /* redheart.ico in Resources */,
 				B6E150481BEEAF590034E1FF /* Images-2.xcassets in Resources */,
 				2F52D2FB1C0BD697008E35AD /* Phantom.mp3 in Resources */,
 				47B49DE01BEDB9BE007919B9 /* Main.storyboard in Resources */,

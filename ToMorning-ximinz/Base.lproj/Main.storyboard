@@ -577,7 +577,7 @@
         <!--Reports View Controller-->
         <scene sceneID="V91-1y-OcT">
             <objects>
-                <viewController id="THM-w2-ESZ" customClass="ReportsViewController" customModule="ToMorning_ximinz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReportsViewController" id="THM-w2-ESZ" customClass="ReportsViewController" customModule="ToMorning_ximinz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FLA-dB-Nf1"/>
                         <viewControllerLayoutGuide type="bottom" id="Umr-GM-4rI"/>
@@ -969,6 +969,16 @@
                                     <constraint firstAttribute="width" secondItem="ubV-G2-M2l" secondAttribute="height" multiplier="9:6" id="x8V-Nm-546"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXC-yq-0qA">
+                                <rect key="frame" x="16" y="72" width="64" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eXC-yq-0qA" secondAttribute="height" multiplier="8:7" id="nFs-Pn-2df"/>
+                                    <constraint firstAttribute="width" constant="64" id="qrG-1N-MRe"/>
+                                </constraints>
+                                <state key="normal" image="greyheart">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -976,6 +986,7 @@
                             <constraint firstItem="ika-Gm-Mxu" firstAttribute="top" secondItem="ubV-G2-M2l" secondAttribute="bottom" constant="8" symbolic="YES" id="2lJ-R0-c5y"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="C3l-kE-aRy" secondAttribute="bottom" constant="20" id="4N9-lJ-XuV"/>
                             <constraint firstItem="YY2-MN-RPF" firstAttribute="baseline" secondItem="ovb-Sa-xFb" secondAttribute="baseline" constant="7" id="4aL-Jo-kMj"/>
+                            <constraint firstItem="eXC-yq-0qA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="6NC-TM-Uht"/>
                             <constraint firstItem="VUn-JH-peu" firstAttribute="baseline" secondItem="aJT-fh-yxi" secondAttribute="baseline" id="8jR-6D-0q2"/>
                             <constraint firstItem="Iqo-B3-ZWw" firstAttribute="top" secondItem="ika-Gm-Mxu" secondAttribute="bottom" constant="8" id="8mN-y5-gUw"/>
                             <constraint firstAttribute="centerX" secondItem="ika-Gm-Mxu" secondAttribute="centerX" id="A2b-TP-wOp"/>
@@ -997,6 +1008,7 @@
                             <constraint firstItem="YY2-MN-RPF" firstAttribute="leading" secondItem="aJT-fh-yxi" secondAttribute="trailing" constant="10" id="a69-CO-Ccx"/>
                             <constraint firstItem="ubV-G2-M2l" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="aQe-9F-Sur"/>
                             <constraint firstItem="Iqo-B3-ZWw" firstAttribute="top" secondItem="ubV-G2-M2l" secondAttribute="bottom" constant="3" id="b6Z-EC-lLN"/>
+                            <constraint firstItem="eXC-yq-0qA" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="bEp-Ff-77B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="263-i1-cLZ" secondAttribute="trailing" id="dvT-pp-iJK"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="aJT-fh-yxi" secondAttribute="bottom" constant="20" id="eGl-Bq-060"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ovb-Sa-xFb" secondAttribute="bottom" constant="20" id="gk9-zZ-YTX"/>
@@ -1021,6 +1033,7 @@
                         <outlet property="alarmLabel" destination="263-i1-cLZ" id="5ef-cA-ChH"/>
                         <outlet property="analogClockView" destination="ubV-G2-M2l" id="LbO-7b-IEx"/>
                         <outlet property="backgroundimageview" destination="qwB-eN-OlR" id="DvQ-8p-Tnc"/>
+                        <outlet property="heartbutton" destination="eXC-yq-0qA" id="0WU-HY-8ze"/>
                         <outlet property="messageLabel" destination="Iqo-B3-ZWw" id="ry4-wJ-dya"/>
                         <outlet property="youralarmlabel" destination="2w4-BH-Mgh" id="Um5-ky-lTA"/>
                     </connections>
@@ -1054,6 +1067,7 @@
         <image name="cancc.png" width="58" height="58"/>
         <image name="clo.png" width="58" height="58"/>
         <image name="fb.png" width="58" height="58"/>
+        <image name="greyheart" width="300" height="279"/>
         <image name="newevent.png" width="58" height="58"/>
         <image name="rep.png" width="58" height="58"/>
         <image name="sett.png" width="58" height="58"/>

@@ -28,6 +28,7 @@ class AlarmViewController: UIViewController {
     let fileManager = FileManager()
     var alarmactive = false
     
+    @IBOutlet weak var heartbutton: UIButton!
     @IBOutlet weak var analogClockView: AnalogClock!
     @IBOutlet weak var alarmLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
@@ -82,6 +83,9 @@ class AlarmViewController: UIViewController {
         //initial sleeping reports
         if(healthManager.ifhealthkitavailable()){
             NSTimer.scheduledTimerWithTimeInterval(1800, target: self, selector: "initheartrate", userInfo: nil, repeats: false)
+            if(healthManager.getLatestHeartRateInHalfHour() != nil){
+                    self.heartbutton.setImage(UIImage(named: "redheart.ico"), forState: .Normal)
+            }
         }
         alarmactive=true
         analogClockView.setNeedsDisplay()
@@ -231,6 +235,8 @@ class AlarmViewController: UIViewController {
         messageLabel.text=""
         alarmLabel.text="--:--"
         report=nil
+        alarmactive=false
+        heartbutton.setImage(UIImage(named: "greyheart"), forState: .Normal)
     }
 
 
@@ -269,7 +275,7 @@ class AlarmViewController: UIViewController {
             self.alarmLabel.text="--:--"
             self.audioPlayer.stop()
             self.messageLabel.text=""
-            let secondViewController = self.storyboard!.instantiateViewControllerWithIdentifier("CalendarViewController") as! CalendarViewController
+            let secondViewController = self.storyboard!.instantiateViewControllerWithIdentifier("ReportsViewController") as! ReportsViewController
             
             self.navigationController!.pushViewController(secondViewController, animated: true)
         }
@@ -280,6 +286,7 @@ class AlarmViewController: UIViewController {
         self.presentViewController(alertController, animated: true, completion:nil)
         audioPlayer.play()
         alarmDate = NSDate(timeInterval: -90, sinceDate: NSDate())
+        heartbutton.setImage(UIImage(named: "greyheart"), forState: .Normal)
         
     }
 }

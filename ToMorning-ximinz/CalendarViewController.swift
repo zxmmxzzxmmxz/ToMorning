@@ -92,10 +92,10 @@ class CalendarViewController: UIViewController,CLLocationManagerDelegate,UITable
             todolistlabel.text = "待办事项"
         }
         else{
-            temperaturetitlelabel.text = "City:"
-            weathertitlelabel.text = "Humidity(%):"
-            humiditytitlelabel.text = "Weather:"
-            citytitlelabel.text = "Temperature:"
+            temperaturetitlelabel.text = "Temperature:"
+            weathertitlelabel.text = "Weather:"
+            humiditytitlelabel.text = "Humidity(%):"
+            citytitlelabel.text = "City:"
             todolistlabel.text = "To Do List"
         }
     }
